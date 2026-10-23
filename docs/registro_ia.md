@@ -21,7 +21,8 @@ faixas de atraso; distratados fora da cobrança; parcelas futuras fora do
 o banco foi boa e vai para confirmação com a Cobrança).
 
 **Onde errou ou supôs sem base:** a IA não tinha visto o arquivo, então
-assumiu um formato genérico. Conferi abrindo o CSV:
+assumiu um formato genérico. Conferi cada ponto com o relatório do `perfil.py`
+e com a contagem independente:
 
 | O que a IA disse                 | O que o arquivo mostra                                                    |
 | -------------------------------- | ------------------------------------------------------------------------- |
@@ -63,7 +64,7 @@ gravasse o arquivo direto em UTF-8, e o resultado saiu correto.
 **Como validei:** não registrei quais linhas do CSV olhei manualmente.
 A validação confiável é uma contagem independente, escrita por mim
 (`contagem_rapida.py`, saída em `docs/evidencias/contagem_rapida_saida.txt`),
-rodada em [DATA]. Os números bateram com o relatório do `perfil.py`:
+rodada em 22/10/2026. Os números bateram com o relatório do `perfil.py`:
 46 duplicatas, 12 parcelas abertas com valor pago, e formatos diferentes
 só no Loteamento (4.406 de 4.406 linhas).
 

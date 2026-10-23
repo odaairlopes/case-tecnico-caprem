@@ -1,0 +1,19 @@
+linhas: 10761
+duplicadas exatas: 46
+EMPREENDIMENTO
+Edifício Parque Azul                2633
+LOTEAMENTO VISTA DO HORTO           4406
+Residencial Jardim das Palmeiras    3722
+dtype: int64
+STATUS_PARCELA
+PAGA      4655
+Aberta    2469
+Paga      1937
+ABERTA    1700
+Name: count, dtype: int64
+SITUACAO_CONTRATO
+ATIVO         10068
+DISTRATADO      405
+QUITADO         288
+Name: count, dtype: int64
+abertas com valor pago > 0: 12
