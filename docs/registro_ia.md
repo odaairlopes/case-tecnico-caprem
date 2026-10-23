@@ -279,3 +279,80 @@ Repeti a mutação: com `CARENCIA = 3` não divergiu (o CSV não tem parcelas co
 dias); com `CARENCIA = 2` divergiu (151 contra 134 parcelas). Voltei para 4.
 
 **Commit:** ebefb30
+
+## Passo 8: Dashboard (Streamlit)
+
+**Prompt:** usei uma versão revisada do prompt do guia, com os dados e regras
+vindo de `tratamento.py` e `regras.py` (sem reimplementar regras), os totais
+esperados do passo 5, tratamento de erro de carga e o CPF fora da tela.
+[`docs/ia/passo8_prompt.md`](ia/passo8_prompt.md). O prompt de refinamento visual
+também foi revisado: manter os números, não exibir CPF, e as cores não alteram as
+faixas da regra. [`docs/ia/passo8b_prompt.md`](ia/passo8b_prompt.md)
+
+**O que a IA fez:** criou [`app.py`](../app.py), em duas rodadas.
+
+- _Dashboard inicial:_ cartões (total em atraso, clientes, parcelas, atraso
+  médio), filtros (empreendimento, faixa, tipo de parcela), gráficos por
+  empreendimento e por faixa, tabela por contrato ordenada por saldo, Excel,
+  estado vazio e seção recolhível de qualidade dos dados e valores fora da
+  cobrança. Resposta: [`passo8_resposta_copilot.md`](ia/passo8_resposta_copilot.md).
+- _Refinamento:_ grupos na barra lateral, "Limpar filtros", seletor de data de
+  referência, busca por nome ou CPF/CNPJ, cores por gravidade do atraso, barra
+  "Parte do total" na tabela e gráfico horizontal. Resposta:
+  [`passo8b_resposta_copilot.md`](ia/passo8b_resposta_copilot.md).
+
+**Resultado:** com a data do arquivo e sem filtros, o painel mostra R$ 625.114,94
+e 134 parcelas, igual ao `conferir.py` (passo 7) e ao resumo do passo 5. Parque
+Azul: R$ 558.485,81 e 104 parcelas, igual ao passo 7. A IA também rodou o app de
+forma automática (`AppTest`), sem exceções, com filtros combinados, busca por nome
+e por CPF, "Limpar filtros", estado vazio e outra data (30/09/2026: 151 parcelas,
+R$ 718.861,33, o mesmo valor da mutação de carência 2 do passo 7).
+
+**Evidências:** [`passo8_01_inicial.png`](evidencias/passo8_01_inicial.png),
+[`passo8_02_filtro_parque_azul.png`](evidencias/passo8_02_filtro_parque_azul.png),
+[`passo8_03_filtros_combinados.png`](evidencias/passo8_03_filtros_combinados.png),
+[`passo8_04_estado_vazio.png`](evidencias/passo8_04_estado_vazio.png),
+[`passo8_05_qualidade.png`](evidencias/passo8_05_qualidade.png),
+[`passo8_06_excel.png`](evidencias/passo8_06_excel.png).
+Depois do refinamento:
+[`passo8b_01_inicial.png`](evidencias/passo8b_01_inicial.png),
+[`passo8b_02_busca.png`](evidencias/passo8b_02_busca.png),
+[`passo8b_03_outra_data.png`](evidencias/passo8b_03_outra_data.png),
+[`passo8b_04_estado_vazio.png`](evidencias/passo8b_04_estado_vazio.png),
+[`passo8b_05_excel.png`](evidencias/passo8b_05_excel.png).
+
+**Onde a IA errou / pontos de atenção:** nenhum erro de cálculo encontrado. Pontos
+que apareceram ao olhar o resultado:
+
+- O cartão "Clientes inadimplentes" (30) conta contratos de cada cliente, não
+  pessoas: o mesmo cliente com dois contratos aparece duas vezes (ex.: Francisco
+  de Paula Rodrigues Cardoso, contratos 1010422 e 1010418). Segue o que o prompt
+  pediu (contrato + cliente); no refinamento ganhou uma dica explicando.
+- O Loteamento Vista do Horto traz nomes de clientes em maiúsculas, e "HELOISA DE
+  CASTRO MENDES NASCIMENTO" parece ser a mesma pessoa de "Heloisa de Castro Mendes
+  Nascimento". É dado bruto; o tratamento não normaliza nomes de clientes. Fica
+  como limitação.
+- O guia pedia uma barra de progresso na coluna de saldo; a do Streamlit não
+  formata moeda brasileira. O saldo ficou em texto "R$ 1.234,56" e a barra em uma
+  coluna ao lado ("Parte do total"). Desvio do prompt, registrado.
+- O guia dizia "CPF": o CSV tem `CPF_CNPJ`. Mantido só para busca, nunca exibido
+  nem exportado (LGPD).
+- Mesma pessoa em dois empreendimentos: "Márcia Teixeira Pereira" (contrato 1010403) e "MARCIA TEIXEIRA PEREIRA" (2020152) têm o mesmo telefone
+  ((99) 99476-5333). O cartão "Clientes inadimplentes" conta a pessoa duas
+  vezes. Mesma causa da limitação dos nomes não normalizados, acima.
+- Gráfico por empreendimento com poucas barras: com a busca ativa (print
+  `passo8b_02`), ele fica pequeno e difícil de ler. É só visual, sem erro de
+  dado; não foi alterado.
+- O Streamlit avisou que `use_container_width` será removido; a IA trocou por
+  `width="stretch"`. Um BOM adicionado ao reescrever o arquivo foi removido.
+
+**Limite da validação:** o teste automático (`AppTest`) não vê o visual. As cores,
+a barra de progresso e o gráfico horizontal dependem do print. O `.xlsx` foi
+aberto no Excel nas duas versões (prints 06 e `passo8b_05`). Os 30 "clientes" não
+foram conferidos contra o gabarito, e não há testes automatizados do `app.py`.
+
+**Minha conferência (23/10/2026):** rodei `streamlit run app.py`; os cartões bateram com o `conferir.py` (134
+parcelas e R$ 625.114,94); testei a busca por nome (com e sem acento), os
+filtros e a data de referência; o Excel abriu com os mesmos dados da tela.
+
+**Commit:** (preencher)
