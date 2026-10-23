@@ -3,6 +3,49 @@
 Ferramenta: GitHub Copilot (chat no VS Code). Prompts e respostas completas
 em `docs/ia/`, com a saída crua commitada antes de qualquer correção.
 
+## Resumo
+
+- **Prompts:** 12 pedidos à IA em 11 arquivos (`docs/ia/`): passos 1, 2, 4, 4b,
+  5, 6, 7, 8, 8b, 9 e 10 (este com dois pedidos, resumo e nota técnica). O passo 3
+  (gabarito manual) foi feito sem IA, antes do código, e serviu para conferir o
+  resto.
+- **Erros reais da IA:** 6. Nenhum errou número: o total de 134 parcelas e
+  R$ 625.114,94 bateu com o gabarito e com a conferência independente.
+- **O mais grave:** no passo 1, a IA propôs premissas sem ter visto o arquivo (data
+  de referência "hoje", datas e valores em um só formato, status "RENEGOCIADA",
+  leitura em latin-1). Se eu tivesse aceitado, o painel calcularia o atraso pelo dia
+  em que fosse aberto e leria errado o Loteamento Vista do Horto. Percebi ao
+  comparar cada premissa com o relatório do `perfil.py`.
+- **Outros problemas que não foram erro da IA:** 3 pontos vieram do guia ou do
+  meu próprio material (ver a segunda tabela).
+- **Percebido por acaso:** nenhum erro da IA foi achado só por acaso. O achado de
+  que o CSV não tem parcelas com 3 dias de atraso veio de um teste que fiz de
+  propósito (passo 7), e não de um problema não esperado.
+
+**Erros da IA**
+
+| Passo | O que errou                                                                                                             | Como percebi                                    | Correção                                                             |
+| ----- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- |
+| 1     | Premissas genéricas, sem ter visto o arquivo                                                                            | Comparei com `perfil.py` e `contagem_rapida.py` | Escrevi `premissas.md` com as minhas decisões                        |
+| 2     | Acentos gravados errado ao redirecionar a saída no PowerShell                                                           | Vi "repetições" quebrado no arquivo             | O script passou a gravar direto em UTF-8                             |
+| 4     | Duplicatas removidas depois de tirar espaços, o que juntaria linhas diferentes                                          | Revisão antes de validar                        | Ordem trocada; testes de 6 para 8                                    |
+| 4b    | A primeira versão não tinha a normalização do nome do empreendimento nem o relatório de qualidade                       | Conferi com o que o guia pedia                  | Segundo pedido (passo 4b)                                            |
+| 6     | Primeira mutação inválida: o teste e a restauração rodaram no mesmo bloco                                               | A saída não mostrou falha                       | Refeita em sequência; 2 testes falharam como esperado                |
+| 8     | Barra de progresso do prompt não formata moeda; BOM adicionado ao reescrever o `app.py`; aviso de `use_container_width` | Aviso do Streamlit e conferência dos prints     | Barra em coluna ao lado; BOM removido; trocado por `width="stretch"` |
+
+**Pontos que não foram erro da IA**
+
+| Passo    | O que era                                                                                                             | Como percebi                                                                            | Correção               |
+| -------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ---------------------- |
+| 5, 6 e 7 | O prompt do guia previa carência de 1 dia e conferência contra um painel que ainda não existia                        | Li o prompt contra as respostas da Renata (4 dias) e a ordem dos passos                 | Usei prompts revisados |
+| 8        | Um print do refinamento (`passo8b_03`) mostrava a data padrão, e não a outra data                                     | Conferi os números do print                                                             | Refeito                |
+| 10       | O meu `premissas.md` dizia que "a tela avisa" sobre juros e multa, e ainda marcava "acordo quebrado" como a confirmar | A IA listou o ponto como não confirmado; procurei no `app.py` e reli o e-mail da Renata | Corrigi `premissas.md` |
+
+**Limites que ficam:** o resumo e a nota técnica passaram da extensão pedida na
+primeira versão (770 palavras contra 600) e foram reescritos. Os 30 "clientes" do
+painel não foram conferidos contra o gabarito (só 4 contratos foram), e o `app.py`
+não tem teste automático.
+
 ---
 
 ## Passo 1: Ambiguidades de regra de negócio
@@ -418,7 +461,14 @@ pedi a lista do que ela não conseguiu confirmar.
 a nota sugere para produção (banco, agendador, login, perfis, guarda dos
 arquivos) é sugestão. Nada disso existe no projeto.
 
-**Minha conferência:** (preencher: li os textos em voz alta? o que reescrevi?
-conferi os 4 itens do resumo e os temas da nota técnica?)
+**Minha conferência:** conferi os 4 itens do resumo e os temas da nota técnica
 
-**Commit:** (preencher)
+**Commit:** 6f558a7
+
+## Passo 12: Pacote final
+
+**IA:** não usada. É a conferência e o envio.
+
+**O que fiz:** Fiz a conferencia dos arquivos, do log do git e também o envio do código para o repositório.
+
+**Commit final:** (preencher)
