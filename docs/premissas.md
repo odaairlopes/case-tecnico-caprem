@@ -6,7 +6,7 @@ Cada regra mostra de onde veio:
 - **decisão**: escolha minha, com motivo
 - **confirmar**: depende da resposta da Cobrança (vale a decisão até lá)
 
-Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
+Base: `parcelas_cobranca_2026-09-25_4.csv` (10.761 linhas, 3 empreendimentos).
 
 ## 1. Data de referência
 
@@ -17,15 +17,15 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 
 ## 2. O que é inadimplência
 
-| Regra                             | Decisão                                                        | Fonte   |
-| --------------------------------- | -------------------------------------------------------------- | ------- |
-| Parcela inadimplente              | ABERTA, com **4 ou mais dias de atraso** na data de referência | Renata  |
-| Dias de atraso                    | data de referência − vencimento (dias corridos)                | decisão |
-| Parcelas com 1 a 3 dias de atraso | Fora do total ("em compensação"); só informativo               | Renata  |
-| Faixas de atraso                  | 4–30, 31–60, 61–90, 91–180 e mais de 180 dias                  | decisão |
+| Regra                             | Decisão                                                                                                                                                             | Fonte   |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Parcela inadimplente              | ABERTA, com **4 ou mais dias de atraso** na data de referência                                                                                                      | Renata  |
+| Dias de atraso                    | data de referência − vencimento (dias corridos)                                                                                                                     | decisão |
+| Parcelas com 1 a 3 dias de atraso | Fora do total ("em compensação"); só informativo                                                                                                                    | Renata  |
+| Faixas de atraso                  | 4–30, 31–60, 61–90, 91–180 e mais de 180 dias                                                                                                                       | decisão |
 | Ordem das regras                  | Cada parcela recebe um só motivo, o primeiro que valer: contrato não ativo, financiamento, original de acordo, paga, ainda não venceu, em compensação, inadimplente | decisão |
-| Parcela que vence na data de ref. | Atraso 0: não é inadimplente (ainda não venceu)                | decisão |
-| Totais "à parte"                  | Distratados, financiamento e originais de acordo mostram só parcelas abertas com 4 ou mais dias de atraso, para serem comparáveis ao total | decisão |
+| Parcela que vence na data de ref. | Atraso 0: não é inadimplente (ainda não venceu)                                                                                                                     | decisão |
+| Totais "à parte"                  | Distratados, financiamento e originais de acordo mostram só parcelas abertas com 4 ou mais dias de atraso, para serem comparáveis ao total                          | decisão |
 
 ## 3. Quanto o cliente deve
 
@@ -33,7 +33,7 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 | ----------------------- | ------------------------------------------------------------ | ------- |
 | Valor em atraso         | Saldo = valor da parcela − valor pago                        | decisão |
 | Pagamento parcial       | Existem parcelas abertas com valor já pago; só o saldo conta | dados   |
-| Juros, multa e correção | Fora. O valor mostrado é o de face, e a tela avisa isso      | decisão |
+| Juros, multa e correção | Fora. O valor mostrado é o de face (a tela não traz aviso)   | decisão |
 
 ## 4. Situação do contrato
 
@@ -45,13 +45,13 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 
 ## 5. Acordos de renegociação
 
-| Regra                                                | Decisão                                                                             | Fonte     |
-| ---------------------------------------------------- | ----------------------------------------------------------------------------------- | --------- |
-| Identificação                                        | Campo NUM_ACORDO preenchido, tanto nas parcelas originais quanto nas do tipo ACORDO | dados     |
-| Dupla contagem                                       | Somar tudo contaria a dívida em dobro                                               | dados     |
-| Regra adotada                                        | Só as parcelas do tipo ACORDO; as originais com NUM_ACORDO ficam de fora            | Renata    |
-| Acordo quebrado                                      | A cobrança continua nas parcelas do acordo; a dívida original não volta             | Renata    |
-| Se o acordo quebra, a dívida original volta a valer? | Não tratado nesta versão                                                            | confirmar |
+| Regra                                                | Decisão                                                                             | Fonte  |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------- | ------ |
+| Identificação                                        | Campo NUM_ACORDO preenchido, tanto nas parcelas originais quanto nas do tipo ACORDO | dados  |
+| Dupla contagem                                       | Somar tudo contaria a dívida em dobro                                               | dados  |
+| Regra adotada                                        | Só as parcelas do tipo ACORDO; as originais com NUM_ACORDO ficam de fora            | Renata |
+| Acordo quebrado                                      | A cobrança continua nas parcelas do acordo; a dívida original não volta             | Renata |
+| Se o acordo quebra, a dívida original volta a valer? | Não: "se o cliente não pagar, cobramos as parcelas do acordo" (resposta da Renata)  | Renata |
 
 - O Residencial Jardim das Palmeiras não tem acordos.
 

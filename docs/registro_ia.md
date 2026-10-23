@@ -383,8 +383,47 @@ Ficam só as dependências diretas; as indiretas são resolvidas pelo `pip`.
 **Limite da validação:** a IA não instalou o projeto num ambiente novo nem rodou
 `streamlit run app.py` para o README. Isso depende da execução do zero abaixo.
 
-**Minha conferência:** (preencher: pasta onde cloneei, `pip install` funcionou?,
-`streamlit run app.py` abriu?, testes e `conferir.py` passaram?, o que travou e o
-que corrigi no README)
+**Minha conferência (23/10/2026):** cloneei o repositório em `C:\Temp\teste-caprem`,
+criei um ambiente virtual novo e segui só o README. O `pip install -r
+requirements.txt` terminou sem erro (com as versões fixadas); os 30 testes
+passaram; o `conferir.py` deu "Sem divergência" (134 parcelas e R$ 625.114,94);
+e o `streamlit run app.py` subiu em `http://localhost:8501`, aparecendo as 134 parcelas e R$ 625.114,94, do total em atraso. Nada travou, então não foi preciso corrigir o README. Limite: o clone foi na minha própria máquina, com o mesmo Python (3.12.6); não testei em outro computador nem em outra versão do Python.
+
+**Commit:** 7a27bec
+
+## Passo 10: Resumo para a Renata e nota técnica
+
+**Prompt:** o guia juntava os dois documentos num pedido só. Separei em dois
+(resumo e nota técnica) e passei os arquivos que a IA devia ler, o tamanho, o
+tom e a regra de não inventar nada, pedindo no fim a lista do que ela não
+conseguiu confirmar. [`docs/ia/passo10_prompt.md`](ia/passo10_prompt.md)
+
+**O que a IA fez:** escreveu o [`resumo_renata.md`](resumo_renata.md) (problema,
+o que o painel faz, premissas e o que ficou de fora) e a
+[`nota_tecnica.md`](nota_tecnica.md) (como funciona hoje, o que mudar para rodar
+todo dia em produção e limitações). Resposta:
+[`passo10_resposta_copilot.md`](ia/passo10_resposta_copilot.md).
+
+**Onde a IA errou / precisou de correção:**
+
+- _Premissa sem base no código:_ o `premissas.md` dizia que "a tela avisa" que
+  juros e multa estão fora. Procurei no `app.py` e não existe esse aviso. Corrigi
+  a premissa. Percebi porque a IA listou o ponto como "não confirmado" e fui
+  conferir.
+- _Premissa desatualizada:_ o `premissas.md` ainda marcava "acordo quebrado" como
+  "não tratado / confirmar", mas a Renata já tinha respondido (cobrar as parcelas
+  do acordo). Atualizei a premissa e tirei o ponto da lista de pendências do
+  resumo e da nota.
+- _Tamanho:_ o resumo saiu com cerca de 770 palavras, acima das 600 pedidas.
+- _Frase que cortei:_ a nota dizia que a conferência com carência de 3 dias não
+  acusa divergência. É verdade, mas era detalhe de teste e não ajudava o TI.
+  Removi.
+
+**Limite da validação:** a IA só leu arquivos; não rodou nada neste passo. Tudo o
+que a nota técnica sugere para produção (banco, agendador, login, perfis de
+acesso, retenção de arquivos) é sugestão, não existe no projeto.
+
+**Minha conferência:** (preencher: li o resumo em voz alta? o que reescrevi com a
+minha voz? conferi os 4 itens do resumo e os 7 temas da nota técnica?)
 
 **Commit:** (preencher)
