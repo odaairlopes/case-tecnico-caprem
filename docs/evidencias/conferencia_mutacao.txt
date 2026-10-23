@@ -1,0 +1,28 @@
+﻿Data de referência: 2026-09-25
+
+Empreendimento                      Campo              conferir          regras     diferença
+Edifício Parque Azul                parcelas                115             104            11
+Edifício Parque Azul                contratos                26              18             8
+Edifício Parque Azul                saldo            636.230,19      558.485,81     77.744,38
+Loteamento Vista do Horto           parcelas                 26              22             4
+Loteamento Vista do Horto           contratos                12               9             3
+Loteamento Vista do Horto           saldo             62.177,67       50.802,67     11.375,00
+Residencial Jardim das Palmeiras    parcelas                 10               8             2
+Residencial Jardim das Palmeiras    contratos                 5               3             2
+Residencial Jardim das Palmeiras    saldo             20.453,47       15.826,46      4.627,01
+
+TOTAL GERAL                         parcelas                151             134            17
+TOTAL GERAL                         saldo            718.861,33      625.114,94     93.746,39
+
+DIVERGÊNCIAS:
+ - Edifício Parque Azul: parcelas conferir=115 regras=104
+ - Edifício Parque Azul: contratos conferir=26 regras=18
+ - Edifício Parque Azul: saldo conferir=636230.19 regras=558485.81
+ - Loteamento Vista do Horto: parcelas conferir=26 regras=22
+ - Loteamento Vista do Horto: contratos conferir=12 regras=9
+ - Loteamento Vista do Horto: saldo conferir=62177.67 regras=50802.67
+ - Residencial Jardim das Palmeiras: parcelas conferir=10 regras=8
+ - Residencial Jardim das Palmeiras: contratos conferir=5 regras=3
+ - Residencial Jardim das Palmeiras: saldo conferir=20453.47 regras=15826.46
+ - TOTAL: parcelas conferir=151 regras=134
+ - TOTAL: saldo conferir=718861.33 regras=625114.94

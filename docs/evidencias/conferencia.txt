@@ -1,0 +1,17 @@
+﻿Data de referência: 2026-09-25
+
+Empreendimento                      Campo              conferir          regras     diferença
+Edifício Parque Azul                parcelas                104             104             0
+Edifício Parque Azul                contratos                18              18             0
+Edifício Parque Azul                saldo            558.485,81      558.485,81          0,00
+Loteamento Vista do Horto           parcelas                 22              22             0
+Loteamento Vista do Horto           contratos                 9               9             0
+Loteamento Vista do Horto           saldo             50.802,67       50.802,67          0,00
+Residencial Jardim das Palmeiras    parcelas                  8               8             0
+Residencial Jardim das Palmeiras    contratos                 3               3             0
+Residencial Jardim das Palmeiras    saldo             15.826,46       15.826,46          0,00
+
+TOTAL GERAL                         parcelas                134             134             0
+TOTAL GERAL                         saldo            625.114,94      625.114,94          0,00
+
+Sem divergência.
