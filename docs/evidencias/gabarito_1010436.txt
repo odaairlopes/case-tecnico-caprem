@@ -1,0 +1,41 @@
+Contrato 1010436: 26 linhas lidas (data de referência 25/09/2026)
+
+--- Linhas que ficam de fora, por motivo ---
+  7 linha(s): já paga  [linhas 242 a 263]
+  1 linha(s): 2 dia(s) de atraso (menos de 4, em compensação)  [linhas 248 a 248]
+ 17 linha(s): ainda não venceu  [linhas 249 a 266]
+  1 linha(s): financiamento (é do Repasse)  [linhas 267 a 267]
+
+--- Linhas que ENTRAM (é isso que você soma) ---
+(nenhuma linha entra)
+
+TOTAL EM ATRASO (regras confirmadas): R$ 0,00
+Total se as originais de acordo fossem contadas: R$ 0,00 (diferença: R$ 0,00)
+
+Mostrar todas as linhas com a decisão? (s/n): s
+fora  | Linha 242 | MENSAL 1 | Venc 23/03/2026 | Atraso 186 | PAGA | já paga
+fora  | Linha 243 | MENSAL 2 | Venc 23/04/2026 | Atraso 155 | PAGA | já paga
+fora  | Linha 244 | MENSAL 3 | Venc 23/05/2026 | Atraso 125 | PAGA | já paga
+fora  | Linha 245 | MENSAL 4 | Venc 23/06/2026 | Atraso 94 | PAGA | já paga
+fora  | Linha 246 | MENSAL 5 | Venc 23/07/2026 | Atraso 64 | PAGA | já paga
+fora  | Linha 247 | MENSAL 6 | Venc 23/08/2026 | Atraso 33 | PAGA | já paga
+fora  | Linha 248 | MENSAL 7 | Venc 23/09/2026 | Atraso 2 | ABERTA | 2 dia(s) de atraso (menos de 4, em compensação)
+fora  | Linha 249 | MENSAL 8 | Venc 23/10/2026 | Atraso -28 | ABERTA | ainda não venceu
+fora  | Linha 250 | MENSAL 9 | Venc 23/11/2026 | Atraso -59 | ABERTA | ainda não venceu
+fora  | Linha 251 | MENSAL 10 | Venc 23/12/2026 | Atraso -89 | ABERTA | ainda não venceu
+fora  | Linha 252 | MENSAL 11 | Venc 23/01/2027 | Atraso -120 | ABERTA | ainda não venceu
+fora  | Linha 253 | MENSAL 12 | Venc 23/02/2027 | Atraso -151 | ABERTA | ainda não venceu
+fora  | Linha 254 | MENSAL 13 | Venc 23/03/2027 | Atraso -179 | ABERTA | ainda não venceu
+fora  | Linha 255 | MENSAL 14 | Venc 23/04/2027 | Atraso -210 | ABERTA | ainda não venceu
+fora  | Linha 256 | MENSAL 15 | Venc 23/05/2027 | Atraso -240 | ABERTA | ainda não venceu
+fora  | Linha 257 | MENSAL 16 | Venc 23/06/2027 | Atraso -271 | ABERTA | ainda não venceu
+fora  | Linha 258 | MENSAL 17 | Venc 23/07/2027 | Atraso -301 | ABERTA | ainda não venceu
+fora  | Linha 259 | MENSAL 18 | Venc 23/08/2027 | Atraso -332 | ABERTA | ainda não venceu
+fora  | Linha 260 | MENSAL 19 | Venc 23/09/2027 | Atraso -363 | ABERTA | ainda não venceu
+fora  | Linha 261 | MENSAL 20 | Venc 23/10/2027 | Atraso -393 | ABERTA | ainda não venceu
+fora  | Linha 262 | MENSAL 21 | Venc 23/11/2027 | Atraso -424 | ABERTA | ainda não venceu
+fora  | Linha 263 | INTERMEDIARIA 1 | Venc 23/08/2026 | Atraso 33 | PAGA | já paga
+fora  | Linha 264 | INTERMEDIARIA 2 | Venc 23/02/2027 | Atraso -151 | ABERTA | ainda não venceu
+fora  | Linha 265 | INTERMEDIARIA 3 | Venc 23/08/2027 | Atraso -332 | ABERTA | ainda não venceu
+fora  | Linha 266 | CHAVES 1 | Venc 23/12/2027 | Atraso -454 | ABERTA | ainda não venceu
+fora  | Linha 267 | FINANCIAMENTO 1 | Venc 23/01/2028 | Atraso -485 | ABERTA | financiamento (é do Repasse)

@@ -1,0 +1,180 @@
+Contrato 2020156: 118 linhas lidas (data de referência 25/09/2026)
+
+--- Linhas que ficam de fora, por motivo ---
+ 35 linha(s): já paga  [linhas 6429 a 6463]
+  1 linha(s): 2 dia(s) de atraso (menos de 4, em compensação)  [linhas 6465 a 6465]
+ 35 linha(s): ainda não venceu  [linhas 6466 a 6500]
+  1 linha(s): linha repetida (igual à linha 6435)  [linhas 10717 a 10717]
+  1 linha(s): linha repetida (igual à linha 6436)  [linhas 10718 a 10718]
+  1 linha(s): linha repetida (igual à linha 6437)  [linhas 10719 a 10719]
+  1 linha(s): linha repetida (igual à linha 6438)  [linhas 10720 a 10720]
+  1 linha(s): linha repetida (igual à linha 6439)  [linhas 10721 a 10721]
+  1 linha(s): linha repetida (igual à linha 6440)  [linhas 10722 a 10722]
+  1 linha(s): linha repetida (igual à linha 6441)  [linhas 10723 a 10723]
+  1 linha(s): linha repetida (igual à linha 6442)  [linhas 10724 a 10724]
+  1 linha(s): linha repetida (igual à linha 6443)  [linhas 10725 a 10725]
+  1 linha(s): linha repetida (igual à linha 6444)  [linhas 10726 a 10726]
+  1 linha(s): linha repetida (igual à linha 6445)  [linhas 10727 a 10727]
+  1 linha(s): linha repetida (igual à linha 6446)  [linhas 10728 a 10728]
+  1 linha(s): linha repetida (igual à linha 6447)  [linhas 10729 a 10729]
+  1 linha(s): linha repetida (igual à linha 6448)  [linhas 10730 a 10730]
+  1 linha(s): linha repetida (igual à linha 6449)  [linhas 10731 a 10731]
+  1 linha(s): linha repetida (igual à linha 6450)  [linhas 10732 a 10732]
+  1 linha(s): linha repetida (igual à linha 6451)  [linhas 10733 a 10733]
+  1 linha(s): linha repetida (igual à linha 6452)  [linhas 10734 a 10734]
+  1 linha(s): linha repetida (igual à linha 6453)  [linhas 10735 a 10735]
+  1 linha(s): linha repetida (igual à linha 6454)  [linhas 10736 a 10736]
+  1 linha(s): linha repetida (igual à linha 6455)  [linhas 10737 a 10737]
+  1 linha(s): linha repetida (igual à linha 6456)  [linhas 10738 a 10738]
+  1 linha(s): linha repetida (igual à linha 6457)  [linhas 10739 a 10739]
+  1 linha(s): linha repetida (igual à linha 6458)  [linhas 10740 a 10740]
+  1 linha(s): linha repetida (igual à linha 6459)  [linhas 10741 a 10741]
+  1 linha(s): linha repetida (igual à linha 6460)  [linhas 10742 a 10742]
+  1 linha(s): linha repetida (igual à linha 6461)  [linhas 10743 a 10743]
+  1 linha(s): linha repetida (igual à linha 6462)  [linhas 10744 a 10744]
+  1 linha(s): linha repetida (igual à linha 6463)  [linhas 10745 a 10745]
+  1 linha(s): linha repetida (igual à linha 6464)  [linhas 10746 a 10746]
+  1 linha(s): linha repetida (igual à linha 6465)  [linhas 10747 a 10747]
+  1 linha(s): linha repetida (igual à linha 6466)  [linhas 10748 a 10748]
+  1 linha(s): linha repetida (igual à linha 6467)  [linhas 10749 a 10749]
+  1 linha(s): linha repetida (igual à linha 6468)  [linhas 10750 a 10750]
+  1 linha(s): linha repetida (igual à linha 6469)  [linhas 10751 a 10751]
+  1 linha(s): linha repetida (igual à linha 6470)  [linhas 10752 a 10752]
+  1 linha(s): linha repetida (igual à linha 6471)  [linhas 10753 a 10753]
+  1 linha(s): linha repetida (igual à linha 6472)  [linhas 10754 a 10754]
+  1 linha(s): linha repetida (igual à linha 6473)  [linhas 10755 a 10755]
+  1 linha(s): linha repetida (igual à linha 6474)  [linhas 10756 a 10756]
+  1 linha(s): linha repetida (igual à linha 6475)  [linhas 10757 a 10757]
+  1 linha(s): linha repetida (igual à linha 6476)  [linhas 10758 a 10758]
+  1 linha(s): linha repetida (igual à linha 6477)  [linhas 10759 a 10759]
+  1 linha(s): linha repetida (igual à linha 6478)  [linhas 10760 a 10760]
+  1 linha(s): linha repetida (igual à linha 6479)  [linhas 10761 a 10761]
+  1 linha(s): linha repetida (igual à linha 6480)  [linhas 10762 a 10762]
+
+--- Linhas que ENTRAM (é isso que você soma) ---
+Linha 6464 | MENSAL 36 | Venc 2026-08-23 | Atraso 33 dias | Valor 2.750,00 | Pago 0,00 | Saldo 2.750,00
+
+Saldos para somar à mão: 2.750,00
+
+TOTAL EM ATRASO (regras confirmadas): R$ 2.750,00
+Total se as originais de acordo fossem contadas: R$ 2.750,00 (diferença: R$ 0,00)
+
+Mostrar todas as linhas com a decisão? (s/n): s
+fora  | Linha 6429 | MENSAL 1 | Venc 2023-09-23 | Atraso 1098 | Paga | já paga
+fora  | Linha 6430 | MENSAL 2 | Venc 2023-10-23 | Atraso 1068 | Paga | já paga
+fora  | Linha 6431 | MENSAL 3 | Venc 2023-11-23 | Atraso 1037 | Paga | já paga
+fora  | Linha 6432 | MENSAL 4 | Venc 2023-12-23 | Atraso 1007 | Paga | já paga
+fora  | Linha 6433 | MENSAL 5 | Venc 2024-01-23 | Atraso 976 | Paga | já paga
+fora  | Linha 6434 | MENSAL 6 | Venc 2024-02-23 | Atraso 945 | Paga | já paga
+fora  | Linha 6435 | MENSAL 7 | Venc 2024-03-23 | Atraso 916 | Paga | já paga
+fora  | Linha 6436 | MENSAL 8 | Venc 2024-04-23 | Atraso 885 | Paga | já paga
+fora  | Linha 6437 | MENSAL 9 | Venc 2024-05-23 | Atraso 855 | Paga | já paga
+fora  | Linha 6438 | MENSAL 10 | Venc 2024-06-23 | Atraso 824 | Paga | já paga
+fora  | Linha 6439 | MENSAL 11 | Venc 2024-07-23 | Atraso 794 | Paga | já paga
+fora  | Linha 6440 | MENSAL 12 | Venc 2024-08-23 | Atraso 763 | Paga | já paga
+fora  | Linha 6441 | MENSAL 13 | Venc 2024-09-23 | Atraso 732 | Paga | já paga
+fora  | Linha 6442 | MENSAL 14 | Venc 2024-10-23 | Atraso 702 | Paga | já paga
+fora  | Linha 6443 | MENSAL 15 | Venc 2024-11-23 | Atraso 671 | Paga | já paga
+fora  | Linha 6444 | MENSAL 16 | Venc 2024-12-23 | Atraso 641 | Paga | já paga
+fora  | Linha 6445 | MENSAL 17 | Venc 2025-01-23 | Atraso 610 | Paga | já paga
+fora  | Linha 6446 | MENSAL 18 | Venc 2025-02-23 | Atraso 579 | Paga | já paga
+fora  | Linha 6447 | MENSAL 19 | Venc 2025-03-23 | Atraso 551 | Paga | já paga
+fora  | Linha 6448 | MENSAL 20 | Venc 2025-04-23 | Atraso 520 | Paga | já paga
+fora  | Linha 6449 | MENSAL 21 | Venc 2025-05-23 | Atraso 490 | Paga | já paga
+fora  | Linha 6450 | MENSAL 22 | Venc 2025-06-23 | Atraso 459 | Paga | já paga
+fora  | Linha 6451 | MENSAL 23 | Venc 2025-07-23 | Atraso 429 | Paga | já paga
+fora  | Linha 6452 | MENSAL 24 | Venc 2025-08-23 | Atraso 398 | Paga | já paga
+fora  | Linha 6453 | MENSAL 25 | Venc 2025-09-23 | Atraso 367 | Paga | já paga
+fora  | Linha 6454 | MENSAL 26 | Venc 2025-10-23 | Atraso 337 | Paga | já paga
+fora  | Linha 6455 | MENSAL 27 | Venc 2025-11-23 | Atraso 306 | Paga | já paga
+fora  | Linha 6456 | MENSAL 28 | Venc 2025-12-23 | Atraso 276 | Paga | já paga
+fora  | Linha 6457 | MENSAL 29 | Venc 2026-01-23 | Atraso 245 | Paga | já paga
+fora  | Linha 6458 | MENSAL 30 | Venc 2026-02-23 | Atraso 214 | Paga | já paga
+fora  | Linha 6459 | MENSAL 31 | Venc 2026-03-23 | Atraso 186 | Paga | já paga
+fora  | Linha 6460 | MENSAL 32 | Venc 2026-04-23 | Atraso 155 | Paga | já paga
+fora  | Linha 6461 | MENSAL 33 | Venc 2026-05-23 | Atraso 125 | Paga | já paga
+fora  | Linha 6462 | MENSAL 34 | Venc 2026-06-23 | Atraso 94 | Paga | já paga
+fora  | Linha 6463 | MENSAL 35 | Venc 2026-07-23 | Atraso 64 | Paga | já paga
+ENTRA | Linha 6464 | MENSAL 36 | Venc 2026-08-23 | Atraso 33 | Aberta | ENTRA
+fora  | Linha 6465 | MENSAL 37 | Venc 2026-09-23 | Atraso 2 | Aberta | 2 dia(s) de atraso (menos de 4, em compensação)
+fora  | Linha 6466 | MENSAL 38 | Venc 2026-10-23 | Atraso -28 | Aberta | ainda não venceu
+fora  | Linha 6467 | MENSAL 39 | Venc 2026-11-23 | Atraso -59 | Aberta | ainda não venceu
+fora  | Linha 6468 | MENSAL 40 | Venc 2026-12-23 | Atraso -89 | Aberta | ainda não venceu
+fora  | Linha 6469 | MENSAL 41 | Venc 2027-01-23 | Atraso -120 | Aberta | ainda não venceu
+fora  | Linha 6470 | MENSAL 42 | Venc 2027-02-23 | Atraso -151 | Aberta | ainda não venceu
+fora  | Linha 6471 | MENSAL 43 | Venc 2027-03-23 | Atraso -179 | Aberta | ainda não venceu
+fora  | Linha 6472 | MENSAL 44 | Venc 2027-04-23 | Atraso -210 | Aberta | ainda não venceu
+fora  | Linha 6473 | MENSAL 45 | Venc 2027-05-23 | Atraso -240 | Aberta | ainda não venceu
+fora  | Linha 6474 | MENSAL 46 | Venc 2027-06-23 | Atraso -271 | Aberta | ainda não venceu
+fora  | Linha 6475 | MENSAL 47 | Venc 2027-07-23 | Atraso -301 | Aberta | ainda não venceu
+fora  | Linha 6476 | MENSAL 48 | Venc 2027-08-23 | Atraso -332 | Aberta | ainda não venceu
+fora  | Linha 6477 | MENSAL 49 | Venc 2027-09-23 | Atraso -363 | Aberta | ainda não venceu
+fora  | Linha 6478 | MENSAL 50 | Venc 2027-10-23 | Atraso -393 | Aberta | ainda não venceu
+fora  | Linha 6479 | MENSAL 51 | Venc 2027-11-23 | Atraso -424 | Aberta | ainda não venceu
+fora  | Linha 6480 | MENSAL 52 | Venc 2027-12-23 | Atraso -454 | Aberta | ainda não venceu
+fora  | Linha 6481 | MENSAL 53 | Venc 2028-01-23 | Atraso -485 | Aberta | ainda não venceu
+fora  | Linha 6482 | MENSAL 54 | Venc 2028-02-23 | Atraso -516 | Aberta | ainda não venceu
+fora  | Linha 6483 | MENSAL 55 | Venc 2028-03-23 | Atraso -545 | Aberta | ainda não venceu
+fora  | Linha 6484 | MENSAL 56 | Venc 2028-04-23 | Atraso -576 | Aberta | ainda não venceu
+fora  | Linha 6485 | MENSAL 57 | Venc 2028-05-23 | Atraso -606 | Aberta | ainda não venceu
+fora  | Linha 6486 | MENSAL 58 | Venc 2028-06-23 | Atraso -637 | Aberta | ainda não venceu
+fora  | Linha 6487 | MENSAL 59 | Venc 2028-07-23 | Atraso -667 | Aberta | ainda não venceu
+fora  | Linha 6488 | MENSAL 60 | Venc 2028-08-23 | Atraso -698 | Aberta | ainda não venceu
+fora  | Linha 6489 | MENSAL 61 | Venc 2028-09-23 | Atraso -729 | Aberta | ainda não venceu
+fora  | Linha 6490 | MENSAL 62 | Venc 2028-10-23 | Atraso -759 | Aberta | ainda não venceu
+fora  | Linha 6491 | MENSAL 63 | Venc 2028-11-23 | Atraso -790 | Aberta | ainda não venceu
+fora  | Linha 6492 | MENSAL 64 | Venc 2028-12-23 | Atraso -820 | Aberta | ainda não venceu
+fora  | Linha 6493 | MENSAL 65 | Venc 2029-01-23 | Atraso -851 | Aberta | ainda não venceu
+fora  | Linha 6494 | MENSAL 66 | Venc 2029-02-23 | Atraso -882 | Aberta | ainda não venceu
+fora  | Linha 6495 | MENSAL 67 | Venc 2029-03-23 | Atraso -910 | Aberta | ainda não venceu
+fora  | Linha 6496 | MENSAL 68 | Venc 2029-04-23 | Atraso -941 | Aberta | ainda não venceu
+fora  | Linha 6497 | MENSAL 69 | Venc 2029-05-23 | Atraso -971 | Aberta | ainda não venceu
+fora  | Linha 6498 | MENSAL 70 | Venc 2029-06-23 | Atraso -1002 | Aberta | ainda não venceu
+fora  | Linha 6499 | MENSAL 71 | Venc 2029-07-23 | Atraso -1032 | Aberta | ainda não venceu
+fora  | Linha 6500 | MENSAL 72 | Venc 2029-08-23 | Atraso -1063 | Aberta | ainda não venceu
+fora  | Linha 10717 | MENSAL 7 | Venc 2024-03-23 | Atraso 916 | Paga | linha repetida (igual à linha 6435)
+fora  | Linha 10718 | MENSAL 8 | Venc 2024-04-23 | Atraso 885 | Paga | linha repetida (igual à linha 6436)
+fora  | Linha 10719 | MENSAL 9 | Venc 2024-05-23 | Atraso 855 | Paga | linha repetida (igual à linha 6437)
+fora  | Linha 10720 | MENSAL 10 | Venc 2024-06-23 | Atraso 824 | Paga | linha repetida (igual à linha 6438)
+fora  | Linha 10721 | MENSAL 11 | Venc 2024-07-23 | Atraso 794 | Paga | linha repetida (igual à linha 6439)
+fora  | Linha 10722 | MENSAL 12 | Venc 2024-08-23 | Atraso 763 | Paga | linha repetida (igual à linha 6440)
+fora  | Linha 10723 | MENSAL 13 | Venc 2024-09-23 | Atraso 732 | Paga | linha repetida (igual à linha 6441)
+fora  | Linha 10724 | MENSAL 14 | Venc 2024-10-23 | Atraso 702 | Paga | linha repetida (igual à linha 6442)
+fora  | Linha 10725 | MENSAL 15 | Venc 2024-11-23 | Atraso 671 | Paga | linha repetida (igual à linha 6443)
+fora  | Linha 10726 | MENSAL 16 | Venc 2024-12-23 | Atraso 641 | Paga | linha repetida (igual à linha 6444)
+fora  | Linha 10727 | MENSAL 17 | Venc 2025-01-23 | Atraso 610 | Paga | linha repetida (igual à linha 6445)
+fora  | Linha 10728 | MENSAL 18 | Venc 2025-02-23 | Atraso 579 | Paga | linha repetida (igual à linha 6446)
+fora  | Linha 10729 | MENSAL 19 | Venc 2025-03-23 | Atraso 551 | Paga | linha repetida (igual à linha 6447)
+fora  | Linha 10730 | MENSAL 20 | Venc 2025-04-23 | Atraso 520 | Paga | linha repetida (igual à linha 6448)
+fora  | Linha 10731 | MENSAL 21 | Venc 2025-05-23 | Atraso 490 | Paga | linha repetida (igual à linha 6449)
+fora  | Linha 10732 | MENSAL 22 | Venc 2025-06-23 | Atraso 459 | Paga | linha repetida (igual à linha 6450)
+fora  | Linha 10733 | MENSAL 23 | Venc 2025-07-23 | Atraso 429 | Paga | linha repetida (igual à linha 6451)
+fora  | Linha 10734 | MENSAL 24 | Venc 2025-08-23 | Atraso 398 | Paga | linha repetida (igual à linha 6452)
+fora  | Linha 10735 | MENSAL 25 | Venc 2025-09-23 | Atraso 367 | Paga | linha repetida (igual à linha 6453)
+fora  | Linha 10736 | MENSAL 26 | Venc 2025-10-23 | Atraso 337 | Paga | linha repetida (igual à linha 6454)
+fora  | Linha 10737 | MENSAL 27 | Venc 2025-11-23 | Atraso 306 | Paga | linha repetida (igual à linha 6455)
+fora  | Linha 10738 | MENSAL 28 | Venc 2025-12-23 | Atraso 276 | Paga | linha repetida (igual à linha 6456)
+fora  | Linha 10739 | MENSAL 29 | Venc 2026-01-23 | Atraso 245 | Paga | linha repetida (igual à linha 6457)
+fora  | Linha 10740 | MENSAL 30 | Venc 2026-02-23 | Atraso 214 | Paga | linha repetida (igual à linha 6458)
+fora  | Linha 10741 | MENSAL 31 | Venc 2026-03-23 | Atraso 186 | Paga | linha repetida (igual à linha 6459)
+fora  | Linha 10742 | MENSAL 32 | Venc 2026-04-23 | Atraso 155 | Paga | linha repetida (igual à linha 6460)
+fora  | Linha 10743 | MENSAL 33 | Venc 2026-05-23 | Atraso 125 | Paga | linha repetida (igual à linha 6461)
+fora  | Linha 10744 | MENSAL 34 | Venc 2026-06-23 | Atraso 94 | Paga | linha repetida (igual à linha 6462)
+fora  | Linha 10745 | MENSAL 35 | Venc 2026-07-23 | Atraso 64 | Paga | linha repetida (igual à linha 6463)
+fora  | Linha 10746 | MENSAL 36 | Venc 2026-08-23 | Atraso 33 | Aberta | linha repetida (igual à linha 6464)
+fora  | Linha 10747 | MENSAL 37 | Venc 2026-09-23 | Atraso 2 | Aberta | linha repetida (igual à linha 6465)
+fora  | Linha 10748 | MENSAL 38 | Venc 2026-10-23 | Atraso -28 | Aberta | linha repetida (igual à linha 6466)
+fora  | Linha 10749 | MENSAL 39 | Venc 2026-11-23 | Atraso -59 | Aberta | linha repetida (igual à linha 6467)
+fora  | Linha 10750 | MENSAL 40 | Venc 2026-12-23 | Atraso -89 | Aberta | linha repetida (igual à linha 6468)
+fora  | Linha 10751 | MENSAL 41 | Venc 2027-01-23 | Atraso -120 | Aberta | linha repetida (igual à linha 6469)
+fora  | Linha 10752 | MENSAL 42 | Venc 2027-02-23 | Atraso -151 | Aberta | linha repetida (igual à linha 6470)
+fora  | Linha 10753 | MENSAL 43 | Venc 2027-03-23 | Atraso -179 | Aberta | linha repetida (igual à linha 6471)
+fora  | Linha 10754 | MENSAL 44 | Venc 2027-04-23 | Atraso -210 | Aberta | linha repetida (igual à linha 6472)
+fora  | Linha 10755 | MENSAL 45 | Venc 2027-05-23 | Atraso -240 | Aberta | linha repetida (igual à linha 6473)
+fora  | Linha 10756 | MENSAL 46 | Venc 2027-06-23 | Atraso -271 | Aberta | linha repetida (igual à linha 6474)
+fora  | Linha 10757 | MENSAL 47 | Venc 2027-07-23 | Atraso -301 | Aberta | linha repetida (igual à linha 6475)
+fora  | Linha 10758 | MENSAL 48 | Venc 2027-08-23 | Atraso -332 | Aberta | linha repetida (igual à linha 6476)
+fora  | Linha 10759 | MENSAL 49 | Venc 2027-09-23 | Atraso -363 | Aberta | linha repetida (igual à linha 6477)
+fora  | Linha 10760 | MENSAL 50 | Venc 2027-10-23 | Atraso -393 | Aberta | linha repetida (igual à linha 6478)
+fora  | Linha 10761 | MENSAL 51 | Venc 2027-11-23 | Atraso -424 | Aberta | linha repetida (igual à linha 6479)
+fora  | Linha 10762 | MENSAL 52 | Venc 2027-12-23 | Atraso -454 | Aberta | linha repetida (igual à linha 6480)

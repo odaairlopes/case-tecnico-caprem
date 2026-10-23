@@ -1,0 +1,75 @@
+Contrato 1010638: 21 linhas lidas (data de referência 25/09/2026)
+
+--- Linhas que ficam de fora, por motivo ---
+ 17 linha(s): ainda não venceu  [linhas 1986 a 2002]
+  1 linha(s): financiamento (é do Repasse)  [linhas 2003 a 2003]
+
+--- Linhas que ENTRAM (é isso que você soma) ---
+Linha 1983 | MENSAL 1 | Venc 15/07/2026 | Atraso 72 dias | Valor 6.117,65 | Pago 0,00 | Saldo 6.117,65
+Linha 1984 | MENSAL 2 | Venc 15/08/2026 | Atraso 41 dias | Valor 6.117,65 | Pago 2.420,63 | Saldo 3.697,02
+Linha 1985 | MENSAL 3 | Venc 15/09/2026 | Atraso 10 dias | Valor 6.117,65 | Pago 0,00 | Saldo 6.117,65
+
+Saldos para somar à mão: 6.117,65 + 3.697,02 + 6.117,65
+
+TOTAL EM ATRASO (regras confirmadas): R$ 15.932,32
+Total se as originais de acordo fossem contadas: R$ 15.932,32 (diferença: R$ 0,00)
+
+Mostrar todas as linhas com a decisão? (s/n): s
+ENTRA | Linha 1983 | MENSAL 1 | Venc 15/07/2026 | Atraso 72 | ABERTA | ENTRA
+ENTRA | Linha 1984 | MENSAL 2 | Venc 15/08/2026 | Atraso 41 | ABERTA | ENTRA
+ENTRA | Linha 1985 | MENSAL 3 | Venc 15/09/2026 | Atraso 10 | ABERTA | ENTRA
+fora  | Linha 1986 | MENSAL 4 | Venc 15/10/2026 | Atraso -20 | ABERTA | ainda não venceu
+fora  | Linha 1987 | MENSAL 5 | Venc 15/11/2026 | Atraso -51 | ABERTA | ainda não venceu
+fora  | Linha 1988 | MENSAL 6 | Venc 15/12/2026 | Atraso -81 | ABERTA | ainda não venceu
+fora  | Linha 1989 | MENSAL 7 | Venc 15/01/2027 | Atraso -112 | ABERTA | ainda não venceu
+fora  | Linha 1990 | MENSAL 8 | Venc 15/02/2027 | Atraso -143 | ABERTA | ainda não venceu
+fora  | Linha 1991 | MENSAL 9 | Venc 15/03/2027 | Atraso -171 | ABERTA | ainda não venceu
+fora  | Linha 1992 | MENSAL 10 | Venc 15/04/2027 | Atraso -202 | ABERTA | ainda não venceu
+fora  | Linha 1993 | MENSAL 11 | Venc 15/05/2027 | Atraso -232 | ABERTA | ainda não venceu
+fora  | Linha 1994 | MENSAL 12 | Venc 15/06/2027 | Atraso -263 | ABERTA | ainda não venceu
+fora  | Linha 1995 | MENSAL 13 | Venc 15/07/2027 | Atraso -293 | ABERTA | ainda não venceu
+fora  | Linha 1996 | MENSAL 14 | Venc 15/08/2027 | Atraso -324 | ABERTA | ainda não venceu
+fora  | Linha 1997 | MENSAL 15 | Venc 15/09/2027 | Atraso -355 | ABERTA | ainda não venceu
+fora  | Linha 1998 | MENSAL 16 | Venc 15/10/2027 | Atraso -385 | ABERTA | ainda não venceu
+fora  | Linha 1999 | MENSAL 17 | Venc 15/11/2027 | Atraso -416 | ABERTA | ainda não venceu
+fora  | Linha 2000 | INTERMEDIARIA 1 | Venc 15/12/2026 | Atraso -81 | ABERTA | ainda não venceu
+fora  | Linha 2001 | INTERMEDIARIA 2 | Venc 15/06/2027 | Atraso -263 | ABERTA | ainda não venceu
+fora  | Linha 2002 | CHAVES 1 | Venc 15/12/2027 | Atraso -446 | ABERTA | ainda não venceu
+fora  | Linha 2003 | FINANCIAMENTO 1 | Venc 15/01/2028 | Atraso -477 | ABERTA | financiamento (é do Repasse)Contrato 1010638: 21 linhas lidas (data de referência 25/09/2026)
+
+--- Linhas que ficam de fora, por motivo ---
+ 17 linha(s): ainda não venceu  [linhas 1986 a 2002]
+  1 linha(s): financiamento (é do Repasse)  [linhas 2003 a 2003]
+
+--- Linhas que ENTRAM (é isso que você soma) ---
+Linha 1983 | MENSAL 1 | Venc 15/07/2026 | Atraso 72 dias | Valor 6.117,65 | Pago 0,00 | Saldo 6.117,65
+Linha 1984 | MENSAL 2 | Venc 15/08/2026 | Atraso 41 dias | Valor 6.117,65 | Pago 2.420,63 | Saldo 3.697,02
+Linha 1985 | MENSAL 3 | Venc 15/09/2026 | Atraso 10 dias | Valor 6.117,65 | Pago 0,00 | Saldo 6.117,65
+
+Saldos para somar à mão: 6.117,65 + 3.697,02 + 6.117,65
+
+TOTAL EM ATRASO (regras confirmadas): R$ 15.932,32
+Total se as originais de acordo fossem contadas: R$ 15.932,32 (diferença: R$ 0,00)
+
+Mostrar todas as linhas com a decisão? (s/n): s
+ENTRA | Linha 1983 | MENSAL 1 | Venc 15/07/2026 | Atraso 72 | ABERTA | ENTRA
+ENTRA | Linha 1984 | MENSAL 2 | Venc 15/08/2026 | Atraso 41 | ABERTA | ENTRA
+ENTRA | Linha 1985 | MENSAL 3 | Venc 15/09/2026 | Atraso 10 | ABERTA | ENTRA
+fora  | Linha 1986 | MENSAL 4 | Venc 15/10/2026 | Atraso -20 | ABERTA | ainda não venceu
+fora  | Linha 1987 | MENSAL 5 | Venc 15/11/2026 | Atraso -51 | ABERTA | ainda não venceu
+fora  | Linha 1988 | MENSAL 6 | Venc 15/12/2026 | Atraso -81 | ABERTA | ainda não venceu
+fora  | Linha 1989 | MENSAL 7 | Venc 15/01/2027 | Atraso -112 | ABERTA | ainda não venceu
+fora  | Linha 1990 | MENSAL 8 | Venc 15/02/2027 | Atraso -143 | ABERTA | ainda não venceu
+fora  | Linha 1991 | MENSAL 9 | Venc 15/03/2027 | Atraso -171 | ABERTA | ainda não venceu
+fora  | Linha 1992 | MENSAL 10 | Venc 15/04/2027 | Atraso -202 | ABERTA | ainda não venceu
+fora  | Linha 1993 | MENSAL 11 | Venc 15/05/2027 | Atraso -232 | ABERTA | ainda não venceu
+fora  | Linha 1994 | MENSAL 12 | Venc 15/06/2027 | Atraso -263 | ABERTA | ainda não venceu
+fora  | Linha 1995 | MENSAL 13 | Venc 15/07/2027 | Atraso -293 | ABERTA | ainda não venceu
+fora  | Linha 1996 | MENSAL 14 | Venc 15/08/2027 | Atraso -324 | ABERTA | ainda não venceu
+fora  | Linha 1997 | MENSAL 15 | Venc 15/09/2027 | Atraso -355 | ABERTA | ainda não venceu
+fora  | Linha 1998 | MENSAL 16 | Venc 15/10/2027 | Atraso -385 | ABERTA | ainda não venceu
+fora  | Linha 1999 | MENSAL 17 | Venc 15/11/2027 | Atraso -416 | ABERTA | ainda não venceu
+fora  | Linha 2000 | INTERMEDIARIA 1 | Venc 15/12/2026 | Atraso -81 | ABERTA | ainda não venceu
+fora  | Linha 2001 | INTERMEDIARIA 2 | Venc 15/06/2027 | Atraso -263 | ABERTA | ainda não venceu
+fora  | Linha 2002 | CHAVES 1 | Venc 15/12/2027 | Atraso -446 | ABERTA | ainda não venceu
+fora  | Linha 2003 | FINANCIAMENTO 1 | Venc 15/01/2028 | Atraso -477 | ABERTA | financiamento (é do Repasse)

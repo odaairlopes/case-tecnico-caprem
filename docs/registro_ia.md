@@ -69,3 +69,46 @@ rodada em 22/10/2026. Os números bateram com o relatório do `perfil.py`:
 só no Loteamento (4.406 de 4.406 linhas).
 
 **Commit:** a1f9eb2
+
+# Passo 3: Gabarito manual
+
+**IA:** não usada. Conferi à mão os 4 contratos de teste, com apoio do
+`data/conferir_parcelas.py` e das saídas em `docs/evidencias/`. O resultado
+está em `docs/gabarito.md`.
+
+**Resultados:** 1010533 = R$ 0,00 (acordo); 1010638 = R$ 15.932,32
+(pagamento parcial); 1010436 = R$ 0,00 (2 dias de atraso); 2020156 =
+R$ 2.750,00 (duplicatas contadas uma vez).
+
+**Commit:** HASH
+
+## Passo 4: Leitura, validação e normalização
+
+**Prompt:** solicitei a implementação de `tratamento.py`, com leitura do CSV
+em UTF-8 com BOM, suporte aos formatos observados, validação explícita,
+valores monetários exatos e remoção de duplicatas, sem aplicar regras de
+cobrança. O prompt está em [`docs/ia/passo4_prompt.md`](ia/passo4_prompt.md).
+
+**O que a IA fez:** criou `carregar_dados()` e `normalizar_dados()` em
+[`tratamento.py`](../tratamento.py), além de testes em
+[`tests/test_tratamento.py`](../tests/test_tratamento.py). Datas são
+normalizadas para datetime, valores monetários para `Decimal`, e status,
+situação do contrato e tipo de parcela para maiúsculas. A quantidade de
+duplicatas removidas fica disponível em `DataFrame.attrs`.
+
+**Revisão:** antes da validação final, ajustei a ordem para remover
+duplicatas comparando os valores originais, antes de retirar espaços. Assim,
+linhas diferentes apenas por espaços não são tratadas indevidamente como
+duplicatas exatas. Também ampliei a cobertura dos testes de 6 para 8.
+
+**Como validei:** rodei
+`.venv\Scripts\python.exe -m unittest discover -s tests -p test_tratamento.py -v`;
+os 8 testes passaram. Também carreguei o CSV completo: 10.761 linhas na
+origem, 10.715 após remover 46 duplicatas exatas, datas normalizadas e
+valores monetários como `Decimal`. Os valores distintos de status,
+situação do contrato e tipo de parcela ficaram nos conjuntos esperados.
+Não imprimi dados pessoais.
+
+**Resposta registrada:** [`docs/ia/passo4_resposta_copilot.md`](ia/passo4_resposta_copilot.md).
+
+**Commit:** não realizado nesta etapa.

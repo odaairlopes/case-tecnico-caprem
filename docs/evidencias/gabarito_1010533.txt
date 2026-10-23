@@ -1,0 +1,61 @@
+Contrato 1010533: 46 linhas lidas (data de referência 25/09/2026)
+
+--- Linhas que ficam de fora, por motivo ---
+ 21 linha(s): já paga  [linhas 1106 a 1147]
+  3 linha(s): parcela original, renegociada no acordo AC-2026-0046  [linhas 1118 a 1139]
+ 21 linha(s): ainda não venceu  [linhas 1124 a 1151]
+  1 linha(s): financiamento (é do Repasse)  [linhas 1144 a 1144]
+
+--- Linhas que ENTRAM (é isso que você soma) ---
+(nenhuma linha entra)
+
+TOTAL EM ATRASO (regras confirmadas): R$ 0,00
+Total se as originais de acordo fossem contadas: R$ 19.125,00 (diferença: R$ 19.125,00)
+
+Mostrar todas as linhas com a decisão? (s/n): s
+fora  | Linha 1106 | MENSAL 1 | Venc 05/04/2025 | Atraso 538 | PAGA | já paga
+fora  | Linha 1107 | MENSAL 2 | Venc 05/05/2025 | Atraso 508 | PAGA | já paga
+fora  | Linha 1108 | MENSAL 3 | Venc 05/06/2025 | Atraso 477 | PAGA | já paga
+fora  | Linha 1109 | MENSAL 4 | Venc 05/07/2025 | Atraso 447 | PAGA | já paga
+fora  | Linha 1110 | MENSAL 5 | Venc 05/08/2025 | Atraso 416 | PAGA | já paga
+fora  | Linha 1111 | MENSAL 6 | Venc 05/09/2025 | Atraso 385 | PAGA | já paga
+fora  | Linha 1112 | MENSAL 7 | Venc 05/10/2025 | Atraso 355 | PAGA | já paga
+fora  | Linha 1113 | MENSAL 8 | Venc 05/11/2025 | Atraso 324 | PAGA | já paga
+fora  | Linha 1114 | MENSAL 9 | Venc 05/12/2025 | Atraso 294 | PAGA | já paga
+fora  | Linha 1115 | MENSAL 10 | Venc 05/01/2026 | Atraso 263 | PAGA | já paga
+fora  | Linha 1116 | MENSAL 11 | Venc 05/02/2026 | Atraso 232 | PAGA | já paga
+fora  | Linha 1117 | MENSAL 12 | Venc 05/03/2026 | Atraso 204 | PAGA | já paga
+fora  | Linha 1118 | MENSAL 13 | Venc 05/04/2026 | Atraso 173 | ABERTA | parcela original, renegociada no acordo AC-2026-0046
+fora  | Linha 1119 | MENSAL 14 | Venc 05/05/2026 | Atraso 143 | ABERTA | parcela original, renegociada no acordo AC-2026-0046
+fora  | Linha 1120 | MENSAL 15 | Venc 05/06/2026 | Atraso 112 | PAGA | já paga
+fora  | Linha 1121 | MENSAL 16 | Venc 05/07/2026 | Atraso 82 | PAGA | já paga
+fora  | Linha 1122 | MENSAL 17 | Venc 05/08/2026 | Atraso 51 | PAGA | já paga
+fora  | Linha 1123 | MENSAL 18 | Venc 05/09/2026 | Atraso 20 | PAGA | já paga
+fora  | Linha 1124 | MENSAL 19 | Venc 05/10/2026 | Atraso -10 | ABERTA | ainda não venceu
+fora  | Linha 1125 | MENSAL 20 | Venc 05/11/2026 | Atraso -41 | ABERTA | ainda não venceu
+fora  | Linha 1126 | MENSAL 21 | Venc 05/12/2026 | Atraso -71 | ABERTA | ainda não venceu
+fora  | Linha 1127 | MENSAL 22 | Venc 05/01/2027 | Atraso -102 | ABERTA | ainda não venceu
+fora  | Linha 1128 | MENSAL 23 | Venc 05/02/2027 | Atraso -133 | ABERTA | ainda não venceu
+fora  | Linha 1129 | MENSAL 24 | Venc 05/03/2027 | Atraso -161 | ABERTA | ainda não venceu
+fora  | Linha 1130 | MENSAL 25 | Venc 05/04/2027 | Atraso -192 | ABERTA | ainda não venceu
+fora  | Linha 1131 | MENSAL 26 | Venc 05/05/2027 | Atraso -222 | ABERTA | ainda não venceu
+fora  | Linha 1132 | MENSAL 27 | Venc 05/06/2027 | Atraso -253 | ABERTA | ainda não venceu
+fora  | Linha 1133 | MENSAL 28 | Venc 05/07/2027 | Atraso -283 | ABERTA | ainda não venceu
+fora  | Linha 1134 | MENSAL 29 | Venc 05/08/2027 | Atraso -314 | ABERTA | ainda não venceu
+fora  | Linha 1135 | MENSAL 30 | Venc 05/09/2027 | Atraso -345 | ABERTA | ainda não venceu
+fora  | Linha 1136 | MENSAL 31 | Venc 05/10/2027 | Atraso -375 | ABERTA | ainda não venceu
+fora  | Linha 1137 | MENSAL 32 | Venc 05/11/2027 | Atraso -406 | ABERTA | ainda não venceu
+fora  | Linha 1138 | INTERMEDIARIA 1 | Venc 05/09/2025 | Atraso 385 | PAGA | já paga
+fora  | Linha 1139 | INTERMEDIARIA 2 | Venc 05/03/2026 | Atraso 204 | ABERTA | parcela original, renegociada no acordo AC-2026-0046
+fora  | Linha 1140 | INTERMEDIARIA 3 | Venc 05/09/2026 | Atraso 20 | PAGA | já paga
+fora  | Linha 1141 | INTERMEDIARIA 4 | Venc 05/03/2027 | Atraso -161 | ABERTA | ainda não venceu
+fora  | Linha 1142 | INTERMEDIARIA 5 | Venc 05/09/2027 | Atraso -345 | ABERTA | ainda não venceu
+fora  | Linha 1143 | CHAVES 1 | Venc 05/12/2027 | Atraso -436 | ABERTA | ainda não venceu
+fora  | Linha 1144 | FINANCIAMENTO 1 | Venc 05/01/2028 | Atraso -467 | ABERTA | financiamento (é do Repasse)
+fora  | Linha 1145 | ACORDO 1 | Venc 05/07/2026 | Atraso 82 | PAGA | já paga
+fora  | Linha 1146 | ACORDO 2 | Venc 05/08/2026 | Atraso 51 | PAGA | já paga
+fora  | Linha 1147 | ACORDO 3 | Venc 05/09/2026 | Atraso 20 | PAGA | já paga
+fora  | Linha 1148 | ACORDO 4 | Venc 05/10/2026 | Atraso -10 | ABERTA | ainda não venceu
+fora  | Linha 1149 | ACORDO 5 | Venc 05/11/2026 | Atraso -41 | ABERTA | ainda não venceu
+fora  | Linha 1150 | ACORDO 6 | Venc 05/12/2026 | Atraso -71 | ABERTA | ainda não venceu
+fora  | Linha 1151 | ACORDO 7 | Venc 05/01/2027 | Atraso -102 | ABERTA | ainda não venceu
