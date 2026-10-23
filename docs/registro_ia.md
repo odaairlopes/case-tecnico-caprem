@@ -80,7 +80,7 @@ está em `docs/gabarito.md`.
 (pagamento parcial); 1010436 = R$ 0,00 (2 dias de atraso); 2020156 =
 R$ 2.750,00 (duplicatas contadas uma vez).
 
-**Commit:** HASH
+**Commit:** 0bf4957
 
 ## Passo 4: Leitura, validação e normalização
 
