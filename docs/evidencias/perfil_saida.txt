@@ -1,0 +1,143 @@
+
+==============================================================================
+PERFIL DO ARQUIVO: data\parcelas_cobranca_2026-09-25_4.csv
+==============================================================================
+Encoding: utf-8-sig | linhas de dados: 10761 | colunas: 16
+
+------------------------------------------------------------------------------
+EMPREENDIMENTO: 'Edifício Parque Azul'  (2633 linhas; arquivo linhas 2–2634)
+------------------------------------------------------------------------------
+
+[Formatos de data]  (9 = dígito)
+  DT_VENCIMENTO:
+    99/99/9999       2633  [maior 1º campo=28, maior 2º campo=12]
+  DT_PAGAMENTO:
+    (vazio)          1448
+    99/99/9999       1185  [maior 1º campo=31, maior 2º campo=12]
+
+[Formatos de valor numérico]  (9 = dígito, 9+ = 4 ou mais dígitos)
+  VALOR_PARCELA:
+    9.999,99           2171
+    99.999,99           390
+    999.999,99           72
+  VALOR_PAGO:
+    9,99               1448
+    9.999,99           1047
+    99.999,99           138
+
+[Valores distintos de STATUS_PARCELA]
+    'ABERTA'                       1456
+    'PAGA'                         1177
+
+[Valores distintos de SITUACAO_CONTRATO]
+    'ATIVO'                        2633
+
+[Linhas duplicadas]
+  Idênticas em todas as colunas: 0 repetições (0 linhas envolvidas)
+  Mesma chave (COLIGADA+NUM_CONTRATO+TIPO_PARCELA+NUM_PARCELA) mas conteúdo diferente: 0 linhas
+
+[Nulos/vazios por coluna]
+    DT_PAGAMENTO         1448  (55.0%)
+    NUM_ACORDO           2601  (98.8%)
+
+[Parcelas ABERTAS com VALOR_PAGO > 0]
+  Parcelas abertas: 1456 | com valor pago > 0: 8
+    linhas do arquivo: 726, 975, 993, 1367, 1486, 1496, 1867, 1984
+    soma VALOR_PAGO: 27,338.50
+
+[Contratos (coligada/contrato) com mais de um CPF/CNPJ]: 0
+
+[CPFs/CNPJs com mais de um nome]: 0  (nomes comparados sem diferenciar caixa/espaços)
+
+------------------------------------------------------------------------------
+EMPREENDIMENTO: 'LOTEAMENTO VISTA DO HORTO'  (4406 linhas; arquivo linhas 6357–10762)
+------------------------------------------------------------------------------
+
+[Formatos de data]  (9 = dígito)
+  DT_VENCIMENTO:
+    9999-99-99       4406
+  DT_PAGAMENTO:
+    (vazio)          2467
+    9999-99-99       1939
+
+[Formatos de valor numérico]  (9 = dígito, 9+ = 4 ou mais dígitos)
+  VALOR_PARCELA:
+    9+.99              4406
+  VALOR_PAGO:
+    9.99               2467
+    9+.99              1938
+    999.99                1
+
+[Valores distintos de STATUS_PARCELA]
+    'Aberta'                       2469
+    'Paga'                         1937
+
+[Valores distintos de SITUACAO_CONTRATO]
+    'ATIVO'                        3830
+    'DISTRATADO'                    288
+    'QUITADO'                       288
+
+[Linhas duplicadas]
+  Idênticas em todas as colunas: 46 repetições (92 linhas envolvidas)
+    linhas do arquivo: 6435, 6436, 6437, 6438, 6439, 6440, 6441, 6442 ... (+84)
+  Mesma chave (COLIGADA+NUM_CONTRATO+TIPO_PARCELA+NUM_PARCELA) mas conteúdo diferente: 0 linhas
+
+[Nulos/vazios por coluna]
+    DT_PAGAMENTO         2467  (56.0%)
+    NUM_ACORDO           4345  (98.6%)
+
+[Parcelas ABERTAS com VALOR_PAGO > 0]
+  Parcelas abertas: 2469 | com valor pago > 0: 2
+    linhas do arquivo: 7543, 7748
+    soma VALOR_PAGO: 2,072.33
+
+[Contratos (coligada/contrato) com mais de um CPF/CNPJ]: 0
+
+[CPFs/CNPJs com mais de um nome]: 0  (nomes comparados sem diferenciar caixa/espaços)
+
+------------------------------------------------------------------------------
+EMPREENDIMENTO: 'Residencial Jardim das Palmeiras'  (3722 linhas; arquivo linhas 2635–6356)
+------------------------------------------------------------------------------
+
+[Formatos de data]  (9 = dígito)
+  DT_VENCIMENTO:
+    99/99/9999       3722  [maior 1º campo=28, maior 2º campo=12]
+  DT_PAGAMENTO:
+    99/99/9999       3480  [maior 1º campo=31, maior 2º campo=12]
+    (vazio)           242
+
+[Formatos de valor numérico]  (9 = dígito, 9+ = 4 ou mais dígitos)
+  VALOR_PARCELA:
+    9.999,99           3436
+    99.999,99           222
+    999.999,99           64
+  VALOR_PAGO:
+    9.999,99           3203
+    9,99                242
+    99.999,99           221
+    999.999,99           56
+
+[Valores distintos de STATUS_PARCELA]
+    'PAGA'                         3478
+    'ABERTA'                        244
+
+[Valores distintos de SITUACAO_CONTRATO]
+    'ATIVO'                        3605
+    'DISTRATADO'                    117
+
+[Linhas duplicadas]
+  Idênticas em todas as colunas: 0 repetições (0 linhas envolvidas)
+  Mesma chave (COLIGADA+NUM_CONTRATO+TIPO_PARCELA+NUM_PARCELA) mas conteúdo diferente: 0 linhas
+
+[Nulos/vazios por coluna]
+    DT_PAGAMENTO          242  (6.5%)
+    NUM_ACORDO           3722  (100.0%)
+
+[Parcelas ABERTAS com VALOR_PAGO > 0]
+  Parcelas abertas: 244 | com valor pago > 0: 2
+    linhas do arquivo: 5054, 5056
+    soma VALOR_PAGO: 2,591.54
+
+[Contratos (coligada/contrato) com mais de um CPF/CNPJ]: 0
+
+[CPFs/CNPJs com mais de um nome]: 0  (nomes comparados sem diferenciar caixa/espaços)

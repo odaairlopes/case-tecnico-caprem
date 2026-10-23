@@ -51,6 +51,8 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 | Acordo quebrado                                      | Parcela de acordo vencida e aberta é inadimplente, com marcação "acordo quebrado"       | decisão   |
 | Se o acordo quebra, a dívida original volta a valer? | Não tratado nesta versão                                                                | confirmar |
 
+- O Residencial Jardim das Palmeiras não tem acordos.
+
 ## 6. Tipos de parcela
 
 | Regra                         | Decisão                                                     | Fonte     |
@@ -60,15 +62,15 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 
 ## 7. Qualidade dos dados
 
-| Problema encontrado                                 | Tratamento                                         | Fonte   |
-| --------------------------------------------------- | -------------------------------------------------- | ------- |
-| Datas em dois formatos (dd/mm/aaaa e aaaa-mm-dd)    | Detectar pelo padrão do texto; nunca assumir um só | dados   |
-| Valores em dois formatos ("3.625,00" e "2000.00")   | Idem                                               | dados   |
-| Status com caixa mista (PAGA, Paga, ABERTA, Aberta) | Padronizar para maiúsculas                         | dados   |
-| 46 linhas duplicadas idênticas                      | Removidas e contadas no relatório de qualidade     | dados   |
-| Arquivo em utf-8 com BOM                            | Ler com `utf-8-sig`                                | dados   |
-| Dado que não consegue ser lido                      | Para com erro claro, em vez de virar vazio         | decisão |
-| Telefones começam todos com (00)                    | Mostrados como vieram, sem validar (dado fictício) | dados   |
+| Problema encontrado                                 | Tratamento                                                                                                                   | Fonte   |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Datas em dois formatos (dd/mm/aaaa e aaaa-mm-dd)    | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto                                                         | dados   |
+| Valores em dois formatos ("3.625,00" e "2000.00")   | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto                                                         | dados   |
+| Status com caixa mista (PAGA, Paga, ABERTA, Aberta) | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto                                                         | dados   |
+| 46 linhas duplicadas idênticas                      | Um bloco do contrato 2020156 aparece duas vezes (linhas 6435–6480 e 10717–10762). Remover e contar no relatório de qualidade | dados   |
+| Arquivo em utf-8 com BOM                            | Ler com `utf-8-sig`                                                                                                          | dados   |
+| Dado que não consegue ser lido                      | Para com erro claro, em vez de virar vazio                                                                                   | decisão |
+| Telefones começam todos com (00)                    | Mostrados como vieram, sem validar (dado fictício)                                                                           | dados   |
 
 ## 8. O que ficou de fora desta versão
 

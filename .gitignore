@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+# Dados de clientes (CPF, telefone): não versionar
+data/*.csv
