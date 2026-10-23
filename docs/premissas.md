@@ -17,13 +17,12 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 
 ## 2. O que é inadimplência
 
-| Regra                                           | Decisão                                                  | Fonte     |
-| ----------------------------------------------- | -------------------------------------------------------- | --------- |
-| Parcela inadimplente                            | Status ABERTA e vencimento anterior à data de referência | decisão   |
-| Parcela que vence na própria data de referência | Não é inadimplente (ainda está no prazo)                 | decisão   |
-| Parcela futura                                  | Não entra no "em atraso"                                 | decisão   |
-| Carência (dias de tolerância)                   | Nenhuma. O atraso começa no dia seguinte ao vencimento   | confirmar |
-| Faixas de atraso                                | 1–30, 31–60, 61–90, 91–180 e mais de 180 dias            | decisão   |
+| Regra                             | Decisão                                                        | Fonte   |
+| --------------------------------- | -------------------------------------------------------------- | ------- |
+| Parcela inadimplente              | ABERTA, com **4 ou mais dias de atraso** na data de referência | Renata  |
+| Dias de atraso                    | data de referência − vencimento (dias corridos)                | decisão |
+| Parcelas com 1 a 3 dias de atraso | Fora do total ("em compensação"); só informativo               | Renata  |
+| Faixas de atraso                  | 4–30, 31–60, 61–90, 91–180 e mais de 180 dias                  | decisão |
 
 ## 3. Quanto o cliente deve
 
@@ -35,42 +34,42 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 
 ## 4. Situação do contrato
 
-| Regra      | Decisão                                                         | Fonte     |
-| ---------- | --------------------------------------------------------------- | --------- |
-| ATIVO      | Único escopo de cobrança                                        | decisão   |
-| DISTRATADO | Fora do total cobrável; valor mostrado à parte para conferência | confirmar |
-| QUITADO    | Fora do total. Não há parcelas abertas nesses contratos         | dados     |
+| Regra      | Decisão                                                 | Fonte   |
+| ---------- | ------------------------------------------------------- | ------- |
+| ATIVO      | Único escopo de cobrança                                | decisão |
+| DISTRATADO | Fora da cobrança (já no jurídico)                       | Renata  |
+| QUITADO    | Fora do total. Não há parcelas abertas nesses contratos | dados   |
 
 ## 5. Acordos de renegociação
 
-| Regra                                                | Decisão                                                                                 | Fonte     |
-| ---------------------------------------------------- | --------------------------------------------------------------------------------------- | --------- |
-| Identificação                                        | Campo NUM_ACORDO preenchido, tanto nas parcelas originais quanto nas do tipo ACORDO     | dados     |
-| Dupla contagem                                       | Somar tudo contaria a dívida em dobro                                                   | dados     |
-| Regra adotada                                        | Vale só a dívida das parcelas do tipo ACORDO; as originais com NUM_ACORDO ficam de fora | confirmar |
-| Acordo quebrado                                      | Parcela de acordo vencida e aberta é inadimplente, com marcação "acordo quebrado"       | decisão   |
-| Se o acordo quebra, a dívida original volta a valer? | Não tratado nesta versão                                                                | confirmar |
+| Regra                                                | Decisão                                                                             | Fonte     |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------- | --------- |
+| Identificação                                        | Campo NUM_ACORDO preenchido, tanto nas parcelas originais quanto nas do tipo ACORDO | dados     |
+| Dupla contagem                                       | Somar tudo contaria a dívida em dobro                                               | dados     |
+| Regra adotada                                        | Só as parcelas do tipo ACORDO; as originais com NUM_ACORDO ficam de fora            | Renata    |
+| Acordo quebrado                                      | A cobrança continua nas parcelas do acordo; a dívida original não volta             | Renata    |
+| Se o acordo quebra, a dívida original volta a valer? | Não tratado nesta versão                                                            | confirmar |
 
 - O Residencial Jardim das Palmeiras não tem acordos.
 
 ## 6. Tipos de parcela
 
-| Regra                         | Decisão                                                     | Fonte     |
-| ----------------------------- | ----------------------------------------------------------- | --------- |
-| MENSAL, INTERMEDIARIA, CHAVES | Contam normalmente; dá para filtrar por tipo                | decisão   |
-| FINANCIAMENTO                 | Quem paga é o banco, não o cliente. Fica em filtro separado | confirmar |
+| Regra                         | Decisão                                                                         | Fonte   |
+| ----------------------------- | ------------------------------------------------------------------------------- | ------- |
+| MENSAL, INTERMEDIARIA, CHAVES | Contam normalmente; dá para filtrar por tipo                                    | decisão |
+| FINANCIAMENTO                 | Fora da cobrança (é do Repasse; o cliente não pode receber ligação da Cobrança) | Renata  |
 
 ## 7. Qualidade dos dados
 
-| Problema encontrado                                 | Tratamento                                                                                                                   | Fonte   |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Datas em dois formatos (dd/mm/aaaa e aaaa-mm-dd)    | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto                                                         | dados   |
-| Valores em dois formatos ("3.625,00" e "2000.00")   | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto                                                         | dados   |
-| Status com caixa mista (PAGA, Paga, ABERTA, Aberta) | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto                                                         | dados   |
-| 46 linhas duplicadas idênticas                      | Um bloco do contrato 2020156 aparece duas vezes (linhas 6435–6480 e 10717–10762). Remover e contar no relatório de qualidade | dados   |
-| Arquivo em utf-8 com BOM                            | Ler com `utf-8-sig`                                                                                                          | dados   |
-| Dado que não consegue ser lido                      | Para com erro claro, em vez de virar vazio                                                                                   | decisão |
-| Telefones começam todos com (00)                    | Mostrados como vieram, sem validar (dado fictício)                                                                           | dados   |
+| Problema encontrado                                 | Tratamento                                                           | Fonte   |
+| --------------------------------------------------- | -------------------------------------------------------------------- | ------- |
+| Datas em dois formatos (dd/mm/aaaa e aaaa-mm-dd)    | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto | dados   |
+| Valores em dois formatos ("3.625,00" e "2000.00")   | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto | dados   |
+| Status com caixa mista (PAGA, Paga, ABERTA, Aberta) | Apenas no 'Loteamento Vista do Horto'; detectar pelo padrão do texto | dados   |
+| Duplicata do contrato 2020156                       | Contar uma vez só (colagem repetida na exportação)                   | Renata  |
+| Arquivo em utf-8 com BOM                            | Ler com `utf-8-sig`                                                  | dados   |
+| Dado que não consegue ser lido                      | Para com erro claro, em vez de virar vazio                           | decisão |
+| Telefones começam todos com (00)                    | Mostrados como vieram, sem validar (dado fictício)                   | dados   |
 
 ## 8. O que ficou de fora desta versão
 
@@ -78,10 +77,3 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 - Percentual de inadimplência (falta definir a base de cálculo)
 - Carência configurável e telas separadas para cada tipo de acordo
 - Controle de acesso e LGPD (vai na nota técnica)
-
-## 9. Perguntas em aberto para a Renata
-
-1. Acordo: contar só as parcelas do acordo? Se o cliente quebrar, a dívida original volta a valer?
-2. Contratos distratados com parcelas abertas ficam fora da cobrança?
-3. Parcelas de financiamento (banco) entram na inadimplência do cliente ou ficam separadas?
-4. Existe carência oficial depois do vencimento?
