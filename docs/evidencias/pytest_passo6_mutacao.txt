@@ -1,0 +1,70 @@
+﻿=============================================================== test session starts ================================================================
+platform win32 -- Python 3.12.6, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\odair\Desktop\Testes\caprem-inadimplencia\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\odair\Desktop\Testes\caprem-inadimplencia
+plugins: anyio-4.15.1
+collecting ... collected 30 items
+
+tests/test_regras.py::TestRegras::test_aberta_futura_fica_fora PASSED                                                                         [  3%]
+tests/test_regras.py::TestRegras::test_aberta_vencida_e_inadimplente_com_saldo_cheio PASSED                                                   [  6%]
+tests/test_regras.py::TestRegras::test_agregacoes_por_contrato_e_empreendimento PASSED                                                        [ 10%]
+tests/test_regras.py::TestRegras::test_contrato_distratado_fica_fora_e_aparece_a_parte PASSED                                                 [ 13%]
+tests/test_regras.py::TestRegras::test_contrato_quitado_fica_fora_e_aparece_a_parte PASSED                                                    [ 16%]
+tests/test_regras.py::TestRegras::test_data_ref_diferente_muda_os_dias PASSED                                                                 [ 20%]
+tests/test_regras.py::TestRegras::test_data_ref_padrao_e_a_do_arquivo PASSED                                                                  [ 23%]
+tests/test_regras.py::TestRegras::test_faixa_so_para_inadimplentes PASSED                                                                     [ 26%]
+tests/test_regras.py::TestRegras::test_financiamento_fica_fora_e_aparece_a_parte PASSED                                                       [ 30%]
+tests/test_regras.py::TestRegras::test_fronteira_carencia_3_dias_fora_e_4_dias_dentro FAILED                                                  [ 33%]
+tests/test_regras.py::TestRegras::test_fronteira_dia_anterior_esta_em_compensacao PASSED                                                      [ 36%]
+tests/test_regras.py::TestRegras::test_fronteira_vence_na_data_de_referencia_nao_e_inadimplente PASSED                                        [ 40%]
+tests/test_regras.py::TestRegras::test_fronteiras_das_faixas 
+tests/test_regras.py::TestRegras::test_fronteiras_das_faixas PASSED                                                                           [ 43%]
+tests/test_regras.py::TestRegras::test_motivo_de_maior_prioridade_prevalece PASSED                                                            [ 46%]
+tests/test_regras.py::TestRegras::test_nao_altera_o_dataframe_recebido PASSED                                                                 [ 50%]
+tests/test_regras.py::TestRegras::test_pagamento_parcial_usa_o_saldo PASSED                                                                   [ 53%]
+tests/test_regras.py::TestRegras::test_parcela_original_de_acordo_fica_fora_e_a_do_acordo_conta PASSED                                        [ 56%]
+tests/test_regras.py::TestRegras::test_parcela_paga_fica_fora PASSED                                                                          [ 60%]
+tests/test_regras.py::TestRegras::test_saldo_continua_decimal PASSED                                                                          [ 63%]
+tests/test_tratamento.py::TestNormalizarDados::test_le_csv_com_bom_e_separador_ponto_e_virgula PASSED                                         [ 66%]
+tests/test_tratamento.py::TestNormalizarDados::test_normaliza_valores_status_datas_e_mantem_precisao_monetaria PASSED                         [ 70%]
+tests/test_tratamento.py::TestNormalizarDados::test_rejeita_campo_obrigatorio_vazio PASSED                                                    [ 73%]
+tests/test_tratamento.py::TestNormalizarDados::test_rejeita_coluna_ausente PASSED                                                             [ 76%]
+tests/test_tratamento.py::TestNormalizarDados::test_rejeita_data_invalida_com_linha_e_coluna PASSED                                           [ 80%]
+tests/test_tratamento.py::TestNormalizarDados::test_rejeita_status_desconhecido PASSED                                                        [ 83%]
+tests/test_tratamento.py::TestNormalizarDados::test_rejeita_valor_monetario_invalido PASSED                                                   [ 86%]
+tests/test_tratamento.py::TestNormalizarDados::test_remove_linhas_exatamente_duplicadas_e_informa_contagem PASSED                             [ 90%]
+tests/test_tratamento.py::TestEmpreendimento::test_padroniza_caixa_e_preposicoes PASSED                                                       [ 93%]
+tests/test_tratamento.py::TestEmpreendimento::test_unifica_variacoes_de_caixa_na_carga PASSED                                                 [ 96%]
+tests/test_tratamento.py::TestRelatorioQualidade::test_conta_linhas_duplicatas_e_empreendimentos PASSED                                       [100%]
+
+===================================================================== FAILURES =====================================================================
+__________________________________________ TestRegras.test_fronteira_carencia_3_dias_fora_e_4_dias_dentro __________________________________________
+
+self = <test_regras.TestRegras testMethod=test_fronteira_carencia_3_dias_fora_e_4_dias_dentro>
+
+    def test_fronteira_carencia_3_dias_fora_e_4_dias_dentro(self):
+        self.assertEqual(linha(calcular(parcela(3)))["MOTIVO"], regras.EM_COMPENSACAO)
+        p4 = linha(calcular(parcela(4)))
+>       self.assertTrue(p4["INADIMPLENTE"])
+E       AssertionError: np.False_ is not true
+
+tests\test_regras.py:119: AssertionError
+__________________________________________________ TestRegras.test_fronteiras_das_faixas (dias=4) __________________________________________________
+
+self = <test_regras.TestRegras testMethod=test_fronteiras_das_faixas>
+
+    def test_fronteiras_das_faixas(self):
+        esperado = {
+            4: "4-30", 30: "4-30", 31: "31-60", 60: "31-60", 61: "61-90",
+            90: "61-90", 91: "91-180", 180: "91-180", 181: ">180",
+        }
+        for dias, faixa in esperado.items():
+            with self.subTest(dias=dias):
+>               self.assertEqual(linha(calcular(parcela(dias)))["FAIXA_ATRASO"], faixa)
+E               AssertionError: None != '4-30'
+
+tests\test_regras.py:129: AssertionError
+============================================================= short test summary info ==============================================================
+FAILED tests/test_regras.py::TestRegras::test_fronteira_carencia_3_dias_fora_e_4_dias_dentro - AssertionError: np.False_ is not true
+SUBFAILED(dias=4) tests/test_regras.py::TestRegras::test_fronteiras_das_faixas - AssertionError: None != '4-30'
+================================================= 2 failed, 29 passed, 8 subtests passed in 2.44s ==================================================

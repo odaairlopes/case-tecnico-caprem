@@ -80,7 +80,7 @@ está em `docs/gabarito.md`.
 (pagamento parcial); 1010436 = R$ 0,00 (2 dias de atraso); 2020156 =
 R$ 2.750,00 (duplicatas contadas uma vez).
 
-**Commit:** 0bf4957
+**Commit:** d9032a2
 
 ## Passo 4: Leitura, validação e normalização
 
@@ -186,5 +186,50 @@ com o gabarito do passo 3 (feito antes, sem IA):
   no resumo à parte.
 - Parcelas com atraso 0 não aparecem como inadimplentes.
 - 12 pagamentos parciais conferidos, saldo = parcela - pago em todos
+
+**Commit:** dcb5973
+
+## Passo 6: Testes das regras
+
+**Prompt:** o guia pedia testes em `pytest`; o projeto já usava `unittest`
+(e o `pytest` não estava instalado), então a IA escreveu em `unittest`, que o
+`pytest` também executa. Acrescentei a fronteira de 3/4 dias e as das faixas,
+que o prompt do guia não cobria (ele previa carência de 1 dia). Prompt do guia:
+[`docs/ia/passo6_prompt.md`](ia/passo6_prompt.md).
+
+**O que a IA fez:** criou 19 testes em
+[`tests/test_regras.py`](../tests/test_regras.py), com DataFrames feitos à mão:
+parcela paga, aberta futura, aberta vencida, pagamento parcial (6.117,65 −
+2.420,63 = 3.697,02), contrato distratado e quitado, financiamento, original de
+acordo versus parcela ACORDO, vence na data de referência (0 dia), 1 dia (em
+compensação), 3/4 dias, fronteiras das faixas (30/31, 60/61, 90/91, 180/181),
+faixa só para inadimplentes, prioridade entre motivos, totais por contrato e
+empreendimento, saldo em `Decimal`, DataFrame de entrada não alterado e data de
+referência padrão 25/09/2026.
+
+**Resultado:** suíte inteira com 30 testes OK (19 novos e 11 de
+`tratamento.py`). Nenhum teste foi ajustado para passar e o `regras.py` não foi
+alterado. Evidências: [`testes_passo6.txt`](evidencias/testes_passo6.txt) e
+[`pytest_passo6.txt`](evidencias/pytest_passo6.txt).
+
+Resposta: [`docs/ia/passo6_resposta_copilot.md`](ia/passo6_resposta_copilot.md).
+
+**Teste de mutação:** troquei `dias < CARENCIA_DIAS` por `dias <=
+CARENCIA_DIAS` (erro de fronteira entre 3 e 4 dias). Dois testes falharam:
+`test_fronteira_carencia_3_dias_fora_e_4_dias_dentro` e
+`test_fronteiras_das_faixas` (caso de 4 dias). Voltei a regra ao original e a
+suíte voltou a passar. Evidência:
+[`pytest_passo6_mutacao.txt`](evidencias/pytest_passo6_mutacao.txt).
+
+**Onde a IA errou:** nada encontrado. Observação: uma primeira execução da
+mutação feita pela IA não valeu, porque o teste e a restauração rodaram no mesmo
+bloco; foi refeita em sequência.
+
+**Limite da validação:** os testes usam dados pequenos e criados à mão; não
+provam a lista inteira do CSV real, que foi conferida no passo 5 contra o
+gabarito. A mutação cobriu uma regra; as demais não foram quebradas de propósito.
+
+**Minha conferência (23/10/2026):** rodei a suíte na minha máquina com
+`unittest` e com `pytest`, e repeti a mutação 2 failed, 29 passed, 8 subtests passed.
 
 **Commit:** (preencher)
