@@ -232,4 +232,50 @@ gabarito. A mutação cobriu uma regra; as demais não foram quebradas de propó
 **Minha conferência (23/10/2026):** rodei a suíte na minha máquina com
 `unittest` e com `pytest`, e repeti a mutação 2 failed, 29 passed, 8 subtests passed.
 
-**Commit:** (preencher)
+**Commit:** d355786
+
+## Passo 7: Conferência independente
+
+**Prompt:** o prompt do guia mandava comparar com "o resultado do dashboard", mas
+o `app.py` só existe no passo 8, e o dashboard usa o mesmo `regras.py`. Revisei
+o prompt para comparar com `regras.py` e com as premissas atuais (carência de 4
+dias, financiamento, originais de acordo).
+[`docs/ia/passo7_prompt.md`](ia/passo7_prompt.md)
+
+**O que a IA fez:** criou [`conferir.py`](../conferir.py). O cálculo usa só
+filtros e somas diretas sobre o CSV tratado, sem `regras.py`; o `regras.py` é
+importado apenas depois, para comparar parcelas, contratos e saldo por
+empreendimento e o total geral. Sai com código 0 (sem divergência) ou 1.
+Resposta: [`docs/ia/passo7_resposta_copilot.md`](ia/passo7_resposta_copilot.md).
+
+**Resultado no CSV real:** sem divergência, código 0. Parque Azul 104 parcelas /
+18 contratos / R$ 558.485,81; Vista do Horto 22 / 9 / R$ 50.802,67; Jardim das
+Palmeiras 8 / 3 / R$ 15.826,46; total 134 parcelas e R$ 625.114,94. Evidência:
+[`conferencia.txt`](evidencias/conferencia.txt).
+
+**Teste de mutação no `conferir.py`:**
+
+- `CARENCIA` de 4 para 3: **sem divergência**. Não é falha do script: o CSV não
+  tem parcelas com 3 dias de atraso (as 17 em compensação têm todas 2 dias), então
+  `>= 3` e `>= 4` pegam as mesmas parcelas. Essa fronteira só é exercitada pelos
+  testes do passo 6, com dados feitos à mão.
+- `CARENCIA` de 4 para 2: **divergência**, código de saída 1. O conferir deu 151
+  parcelas e R$ 718.861,33 contra 134 e R$ 625.114,94 do `regras.py`; a diferença
+  de R$ 93.746,39 é exatamente o total das 17 parcelas em compensação. Evidência:
+  [`conferencia_mutacao.txt`](evidencias/conferencia_mutacao.txt). Voltei para 4 e
+  o resultado voltou a "sem divergência".
+
+**Onde a IA errou:** nada encontrado. A divergência acima foi provocada de
+propósito, não é erro real.
+
+**Limite da validação:** os dois cálculos seguem as mesmas premissas e o mesmo
+`tratamento.py`; se uma premissa estiver errada ou o CSV for lido errado, os
+dois erram juntos. A prova independente continua sendo o gabarito do passo 3.
+
+**Minha conferência (23/10/2026):** abri o `conferir.py` e confirmei que o
+cálculo não usa `regras.py` (ele só é importado depois, para comparar). Rodei o
+script: sem divergência, total de 134 parcelas e R$ 625.114,94, igual ao passo 5.
+Repeti a mutação: com `CARENCIA = 3` não divergiu (o CSV não tem parcelas com 3
+dias); com `CARENCIA = 2` divergiu (151 contra 134 parcelas). Voltei para 4.
+
+**Commit:** ebefb30
