@@ -70,7 +70,7 @@ só no Loteamento (4.406 de 4.406 linhas).
 
 **Commit:** a1f9eb2
 
-# Passo 3: Gabarito manual
+## Passo 3: Gabarito manual
 
 **IA:** não usada. Conferi à mão os 4 contratos de teste, com apoio do
 `data/conferir_parcelas.py` e das saídas em `docs/evidencias/`. O resultado
@@ -103,7 +103,7 @@ duplicatas exatas. Também ampliei a cobertura dos testes de 6 para 8.
 
 **Como validei:** rodei
 `.venv\Scripts\python.exe -m unittest discover -s tests -p test_tratamento.py -v`;
-os 8 testes passaram. Também carreguei o CSV completo: 10.761 linhas na
+os 8 testes passaram (execução feita na sessão do Copilot). Também carreguei o CSV completo: 10.761 linhas na
 origem, 10.715 após remover 46 duplicatas exatas, datas normalizadas e
 valores monetários como `Decimal`. Os valores distintos de status,
 situação do contrato e tipo de parcela ficaram nos conjuntos esperados.
@@ -111,4 +111,80 @@ Não imprimi dados pessoais.
 
 **Resposta registrada:** [`docs/ia/passo4_resposta_copilot.md`](ia/passo4_resposta_copilot.md).
 
-**Commit:** não realizado nesta etapa.
+**Commit:** 0bf4957
+
+## Passo 4b: Ajustes do tratamento (conforme o guia)
+
+**Prompt:** o guia pedia normalização do nome do empreendimento e um
+relatório de qualidade, que a primeira versão não tinha. Pedi os dois ajustes.
+[`docs/ia/passo4b_prompt.md`](ia/passo4b_prompt.md)
+
+**O que a IA fez:** criou `normalizar_empreendimento()` (`LOTEAMENTO VISTA DO
+HORTO` passa a `Loteamento Vista do Horto`, com de/da/do/das/dos em minúsculas)
+e `relatorio_qualidade()` (linhas lidas, duplicatas removidas, linhas finais,
+datas e valores inválidos, linhas por empreendimento). Adicionou 3 testes.
+
+**Observação:** datas e valores inválidos interrompem a carga com erro; por isso
+os contadores de inválidos no relatório são sempre 0. O relatório confirma que
+nada inválido passou, mas não "descarta" linhas.
+
+**Como validei:** a suíte completa teve 11 testes aprovados (execução na sessão
+do Copilot). No CSV real: 10.761 linhas lidas, 46 duplicatas, 10.715 finais;
+Loteamento Vista do Horto com 4.360 linhas. Resposta:
+[`docs/ia/passo4b_resposta_copilot.md`](ia/passo4b_resposta_copilot.md).
+
+**Minha conferência (23/10/2026):** rodei a suíte completa
+(`python -m unittest discover -s tests -v`): 11 testes aprovados. Rodei
+`relatorio_qualidade` no CSV real: 10.761 lidas, 46 duplicatas, 10.715 finais,
+0 datas e 0 valores inválidos. Contra o meu `contagem_rapida.py`, que mostra
+2.633 / 4.406 / 3.722 linhas por empreendimento e 46 duplicatas exatas, os
+números batem: o Loteamento tem 4.406 − 46 = 4.360 linhas depois da limpeza.
+O nome `LOTEAMENTO VISTA DO HORTO` (maiúsculas no CSV) aparece padronizado como
+`Loteamento Vista do Horto`.
+
+**Commit:** 09832da
+
+## Passo 5: Regras de negócio
+
+**Prompt:** o prompt do guia estava desatualizado em relação às minhas
+premissas (limite de 4 dias, faixas, financiamento). Usei uma versão revisada,
+com a ordem das exclusões, uso de `Decimal` e formato do retorno definidos.
+[`docs/ia/passo5_prompt.md`](ia/passo5_prompt.md)
+
+**O que a IA fez:** criou `calcular_inadimplencia()` em
+[`regras.py`](../regras.py). Cada parcela recebe um motivo, na ordem: contrato
+não ativo, financiamento, original de acordo, paga, ainda não venceu, em
+compensação (1 a 3 dias) e inadimplente (4 dias ou mais). Devolve parcelas, total
+por contrato, total por empreendimento e resumo.
+
+**Resultado no CSV real (25/09/2026):** 134 parcelas inadimplentes,
+R$ 625.114,94. Os quatro contratos do gabarito bateram: 1010533 = R$ 0,00;
+1010638 = R$ 15.932,32; 1010436 = R$ 0,00; 2020156 = R$ 2.750,00. Resposta:
+[`docs/ia/passo5_resposta_copilot.md`](ia/passo5_resposta_copilot.md).
+
+**Onde a IA errou:** nada encontrado nesta versão. Os acertos foram confirmados
+contra o gabarito, que foi feito antes e sem IA.
+
+**Limite da validação:** o CSV não tem atrasos de 30, 31, 60, 61, 90 e 91 dias,
+e a fronteira de 3/4 dias não foi testada de forma controlada. Essas fronteiras
+ficam para os testes do passo 6.
+
+**Minha conferência (23/10/2026):** rodei o código na minha máquina e comparei
+com o gabarito do passo 3 (feito antes, sem IA):
+
+- `resumo`: 134 inadimplentes (R$ 625.114,94), 17 em compensação, 68
+  distratados, 6 de financiamento e 31 originais de acordo, com data de
+  referência 2026-09-25 (não "hoje").
+- Os 4 contratos do gabarito: 1010533 = 0; 1010638 = 15.932,32; 1010436 = 0;
+  2020156 = 2.750,00. Todos bateram.
+- Pagamento parcial (contrato 1010638, parcela 2): valor 6.117,65, pago
+  2.420,63, saldo 3.697,02 e 41 dias de atraso. O saldo é usado, não o valor cheio.
+- Acordo (1010533): as 3 originais ficam como "Parcela original renegociada em
+  acordo" (R$ 2.812,50, R$ 2.812,50 e R$ 13.500,00); as parcelas ACORDO pagas têm
+  saldo 0 e as futuras estão "Ainda não venceu". Nenhuma entra no total.
+- Todos os 134 inadimplentes são de contratos ATIVO; os distratados aparecem só
+  no resumo à parte.
+- Parcelas com atraso 0 não aparecem como inadimplentes.
+- 12 pagamentos parciais conferidos, saldo = parcela - pago em todos
+
+**Commit:** (preencher)

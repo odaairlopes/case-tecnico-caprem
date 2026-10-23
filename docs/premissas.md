@@ -23,6 +23,9 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 | Dias de atraso                    | data de referência − vencimento (dias corridos)                | decisão |
 | Parcelas com 1 a 3 dias de atraso | Fora do total ("em compensação"); só informativo               | Renata  |
 | Faixas de atraso                  | 4–30, 31–60, 61–90, 91–180 e mais de 180 dias                  | decisão |
+| Ordem das regras                  | Cada parcela recebe um só motivo, o primeiro que valer: contrato não ativo, financiamento, original de acordo, paga, ainda não venceu, em compensação, inadimplente | decisão |
+| Parcela que vence na data de ref. | Atraso 0: não é inadimplente (ainda não venceu)                | decisão |
+| Totais "à parte"                  | Distratados, financiamento e originais de acordo mostram só parcelas abertas com 4 ou mais dias de atraso, para serem comparáveis ao total | decisão |
 
 ## 3. Quanto o cliente deve
 
@@ -70,6 +73,8 @@ Base: `parcelas_cobranca_2026-09-25.csv` (10.761 linhas, 3 empreendimentos).
 | Arquivo em utf-8 com BOM                            | Ler com `utf-8-sig`                                                  | dados   |
 | Dado que não consegue ser lido                      | Para com erro claro, em vez de virar vazio                           | decisão |
 | Telefones começam todos com (00)                    | Mostrados como vieram, sem validar (dado fictício)                   | dados   |
+| Nome do empreendimento em maiúsculas (Loteamento)   | Padronizado em formato de título, com de/da/do/das/dos minúsculos    | decisão |
+| Dado inválido (data, valor, status, tipo)           | A carga para com erro, indicando linha e coluna; nada é descartado   | decisão |
 
 ## 8. O que ficou de fora desta versão
 
