@@ -32,27 +32,17 @@ assumiu um formato genérico. Conferi abrindo o CSV:
 | Procurar um status "RENEGOCIADA" | O status só tem ABERTA e PAGA (em caixas diferentes)                      |
 | Manter a última duplicata        | Todas as duplicatas são idênticas, não há diferença em qual manter.       |
 
-**Como percebi:** abri o arquivo e comparei com as premissas dele, linha a
-linha. A causa comum: pedi a lista sem enviar os dados. Para os próximos
-prompts passo a anexar o CSV e avisar que os formatos podem variar por
-empreendimento.
+**Como percebi:** comparei cada premissa dele com o relatório do `perfil.py`
+(passo 2) e com uma contagem independente (`contagem_rapida.py`). A causa
+comum dos erros: pedi a lista sem enviar os dados. Nos prompts seguintes passei
+a anexar o CSV e a avisar que os formatos variam por empreendimento.
 
 **Correção:** não aceitei as premissas dele. Escrevi `docs/premissas.md` com
 as minhas decisões, marcando a origem de cada uma (dados, decisão ou
 confirmar com a Cobrança), e descartei o que era excesso (carência
 configurável, percentual de inadimplência, telas separadas de acordos).
 
-**Commit:** (cole aqui o hash do commit `ia: passo 1 saída crua do Copilot`)
-
-| O Copilot disse                            | Problema                                                                |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| Data de referência padrão "hoje"           | O arquivo é de 25/09/2026. O padrão deve ser a data do arquivo          |
-| Datas em dd/mm/aaaa                        | O Loteamento vem em `aaaa-mm-dd` e também em `dd/mm/aaaa`               |
-| Valores com vírgula decimal                | O Loteamento vem com ponto (`2000.00`) e também vem com vírgula decimal |
-| Ler em latin-1 ou utf-8-sig                | O arquivo é utf-8 com BOM. Latin-1 estraga acentos sem avisar           |
-| `NUM_CONTRATO` único só dentro da coligada | Conferi: nenhum contrato aparece em duas coligadas                      |
-| Procurar status "RENEGOCIADA"              | O status só tem ABERTA e PAGA (em caixas diferentes)                    |
-| Duplicatas: manter a última                | As 46 são idênticas, então escolher qual manter não importa             |
+**Commit:** 33231f5
 
 ## Passo 2: Perfilamento dos dados
 
@@ -70,8 +60,11 @@ foram gravados errados no arquivo (ex.: "repetições"). Pedi que o script
 gravasse o arquivo direto em UTF-8, e o resultado saiu correto.
 `docs/ia/passo2_resposta_copilot.md`
 
-**Como validei:** [conferi linhas do CSV: diga quais] e rodei uma contagem
-independente (`contagem_rapida.py`, escrita por mim) que bateu com o relatório:
-[escreva os números].
+**Como validei:** não registrei quais linhas do CSV olhei manualmente.
+A validação confiável é uma contagem independente, escrita por mim
+(`contagem_rapida.py`, saída em `docs/evidencias/contagem_rapida_saida.txt`),
+rodada em [DATA]. Os números bateram com o relatório do `perfil.py`:
+46 duplicatas, 12 parcelas abertas com valor pago, e formatos diferentes
+só no Loteamento (4.406 de 4.406 linhas).
 
-**Commit:** (hash)
+**Commit:** a1f9eb2
