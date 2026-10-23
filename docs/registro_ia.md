@@ -355,4 +355,36 @@ foram conferidos contra o gabarito, e não há testes automatizados do `app.py`.
 parcelas e R$ 625.114,94); testei a busca por nome (com e sem acento), os
 filtros e a data de referência; o Excel abriu com os mesmos dados da tela.
 
+**Commit:** a065f01
+
+## Passo 9: README e execução do zero
+
+**Prompt:** usei uma versão revisada do prompt do guia, com o comando real dos
+testes, a conferência com código de saída, o resultado esperado (134 parcelas e
+R$ 625.114,94), a regra de não inventar comandos e o pedido de listar o que foi
+verificado. [`docs/ia/passo9_prompt.md`](ia/passo9_prompt.md)
+
+**O que a IA fez:** criou o [`README.md`](../README.md) (o que faz, requisitos,
+instalação, CSV, dashboard, testes e conferência, resultado esperado, estrutura
+de pastas e documentos). Depois, a meu pedido, fixou as versões no
+[`requirements.txt`](../requirements.txt) a partir do `pip freeze` do ambiente
+(pandas, streamlit, openpyxl e pytest) e acrescentou ao README as pastas
+`docs/conversas` e o gabarito. Resposta:
+[`passo9_resposta_copilot.md`](ia/passo9_resposta_copilot.md).
+
+**Resultado:** a IA rodou os testes (30 OK) e o `conferir.py` (sem divergência,
+134 parcelas e R$ 625.114,94, código 0) no ambiente do projeto.
+
+**Onde a IA errou / pontos de atenção:** nenhum erro encontrado no README até
+agora. O `requirements.txt` original usava faixas de versão (`pandas>=3.0,<4`),
+que não garantem o mesmo ambiente em outra máquina; o guia pedia versões fixadas.
+Ficam só as dependências diretas; as indiretas são resolvidas pelo `pip`.
+
+**Limite da validação:** a IA não instalou o projeto num ambiente novo nem rodou
+`streamlit run app.py` para o README. Isso depende da execução do zero abaixo.
+
+**Minha conferência:** (preencher: pasta onde cloneei, `pip install` funcionou?,
+`streamlit run app.py` abriu?, testes e `conferir.py` passaram?, o que travou e o
+que corrigi no README)
+
 **Commit:** (preencher)
