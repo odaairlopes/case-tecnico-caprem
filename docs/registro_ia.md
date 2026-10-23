@@ -393,37 +393,32 @@ e o `streamlit run app.py` subiu em `http://localhost:8501`, aparecendo as 134 p
 
 ## Passo 10: Resumo para a Renata e nota técnica
 
-**Prompt:** o guia juntava os dois documentos num pedido só. Separei em dois
-(resumo e nota técnica) e passei os arquivos que a IA devia ler, o tamanho, o
-tom e a regra de não inventar nada, pedindo no fim a lista do que ela não
-conseguiu confirmar. [`docs/ia/passo10_prompt.md`](ia/passo10_prompt.md)
+**Prompt:** o guia pedia os dois documentos num pedido só. Separei em dois, disse
+quais arquivos a IA devia ler, o tamanho e o tom, e proibi inventar. No fim,
+pedi a lista do que ela não conseguiu confirmar.
+[`docs/ia/passo10_prompt.md`](ia/passo10_prompt.md)
 
-**O que a IA fez:** escreveu o [`resumo_renata.md`](resumo_renata.md) (problema,
-o que o painel faz, premissas e o que ficou de fora) e a
-[`nota_tecnica.md`](nota_tecnica.md) (como funciona hoje, o que mudar para rodar
-todo dia em produção e limitações). Resposta:
+**O que a IA fez:** escreveu o [`resumo_renata.md`](resumo_renata.md) e a
+[`nota_tecnica.md`](nota_tecnica.md). Resposta:
 [`passo10_resposta_copilot.md`](ia/passo10_resposta_copilot.md).
 
 **Onde a IA errou / precisou de correção:**
 
-- _Premissa sem base no código:_ o `premissas.md` dizia que "a tela avisa" que
-  juros e multa estão fora. Procurei no `app.py` e não existe esse aviso. Corrigi
-  a premissa. Percebi porque a IA listou o ponto como "não confirmado" e fui
-  conferir.
-- _Premissa desatualizada:_ o `premissas.md` ainda marcava "acordo quebrado" como
-  "não tratado / confirmar", mas a Renata já tinha respondido (cobrar as parcelas
-  do acordo). Atualizei a premissa e tirei o ponto da lista de pendências do
-  resumo e da nota.
-- _Tamanho:_ o resumo saiu com cerca de 770 palavras, acima das 600 pedidas.
-- _Frase que cortei:_ a nota dizia que a conferência com carência de 3 dias não
-  acusa divergência. É verdade, mas era detalhe de teste e não ajudava o TI.
-  Removi.
+- O `premissas.md` dizia que "a tela avisa" que juros e multa estão fora. Não
+  existe esse aviso no `app.py`. Corrigi a premissa. Notei porque a IA listou o
+  ponto como não confirmado, e fui procurar.
+- O `premissas.md` ainda marcava "acordo quebrado" como "confirmar", mas a Renata
+  já tinha respondido: cobrar as parcelas do acordo. Atualizei a premissa e tirei
+  o ponto das pendências do resumo e da nota.
+- O resumo saiu com cerca de 770 palavras, e eu pedi 600.
+- A nota citava que a conferência com carência de 3 dias não acusa divergência.
+  É verdade, mas é um detalhe do teste e não serve ao TI. Tirei.
 
-**Limite da validação:** a IA só leu arquivos; não rodou nada neste passo. Tudo o
-que a nota técnica sugere para produção (banco, agendador, login, perfis de
-acesso, retenção de arquivos) é sugestão, não existe no projeto.
+**Limite da validação:** a IA só leu arquivos e não rodou nada neste passo. O que
+a nota sugere para produção (banco, agendador, login, perfis, guarda dos
+arquivos) é sugestão. Nada disso existe no projeto.
 
-**Minha conferência:** (preencher: li o resumo em voz alta? o que reescrevi com a
-minha voz? conferi os 4 itens do resumo e os 7 temas da nota técnica?)
+**Minha conferência:** (preencher: li os textos em voz alta? o que reescrevi?
+conferi os 4 itens do resumo e os temas da nota técnica?)
 
 **Commit:** (preencher)
