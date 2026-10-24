@@ -469,6 +469,8 @@ arquivos) é sugestão. Nada disso existe no projeto.
 
 **IA:** não usada. É a conferência e o envio.
 
-**O que fiz:** Fiz a conferencia dos arquivos, do log do git e também o envio do código para o repositório.
+**O que fiz:** rodei o projeto do zero a partir de um clone limpo, conferi o
+`git log` e os hashes citados neste registro, e enviei o projeto zipado e o link
+ao Vinicius.
 
-**Commit final:** (preencher)
+**Commit final:** ab8207c

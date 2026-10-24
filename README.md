@@ -19,7 +19,8 @@ Na pasta do projeto:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1 (Para Windows)
+source .venv/bin/activate (Para Linux)
 pip install -r requirements.txt
 ```
 
@@ -61,18 +62,18 @@ Com a data padrão e sem filtros, o painel e o `conferir.py` devem mostrar
 
 ## Estrutura de pastas
 
-| Caminho | O que é |
-|---|---|
-| `app.py` | Painel em Streamlit |
-| `tratamento.py` | Leitura e limpeza do CSV, relatório de qualidade dos dados |
-| `regras.py` | Regras de inadimplência (carência, faixas de atraso, saldo) |
-| `conferir.py` | Conferência independente dos totais |
-| `perfil.py` | Diagnóstico inicial do CSV (só relata, não corrige) |
-| `contagem_rapida.py` | Contagem rápida de linhas e duplicatas do CSV |
-| `tests/` | Testes automáticos de `tratamento.py` e `regras.py` |
-| `data/` | CSV de parcelas e `conferir_parcelas.py` (conferência manual do gabarito) |
-| `docs/` | Premissas, gabarito, registro de uso de IA, prompts (`docs/ia/`), conversas com a Cobrança (`docs/conversas/`), evidências (`docs/evidencias/`) e o enunciado do case |
-| `requirements.txt` | Dependências, com versões fixadas |
+| Caminho              | O que é                                                                                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `app.py`             | Painel em Streamlit                                                                                                                              |
+| `tratamento.py`      | Leitura e limpeza do CSV, relatório de qualidade dos dados                                                                                       |
+| `regras.py`          | Regras de inadimplência (carência, faixas de atraso, saldo)                                                                                      |
+| `conferir.py`        | Conferência independente dos totais                                                                                                              |
+| `perfil.py`          | Diagnóstico inicial do CSV (só relata, não corrige)                                                                                              |
+| `contagem_rapida.py` | Contagem rápida de linhas e duplicatas do CSV                                                                                                    |
+| `tests/`             | Testes automáticos de `tratamento.py` e `regras.py`                                                                                              |
+| `data/`              | CSV de parcelas e `conferir_parcelas.py` (conferência manual do gabarito)                                                                        |
+| `docs/`              | Premissas, gabarito, registro de uso de IA, prompts (`docs/ia/`), conversas com a Cobrança (`docs/conversas/`) e evidências (`docs/evidencias/`) |
+| `requirements.txt`   | Dependências, com versões fixadas                                                                                                                |
 
 ## Documentos
 
