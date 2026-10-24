@@ -453,7 +453,8 @@ pedi a lista do que ela não conseguiu confirmar.
 - O `premissas.md` ainda marcava "acordo quebrado" como "confirmar", mas a Renata
   já tinha respondido: cobrar as parcelas do acordo. Atualizei a premissa e tirei
   o ponto das pendências do resumo e da nota.
-- O resumo saiu com cerca de 770 palavras, e eu pedi 600.
+- O resumo saiu com cerca de 770 palavras, e eu pedi 600. Reescrevi; ficou
+  com 687, dentro de 2 páginas.
 - A nota citava que a conferência com carência de 3 dias não acusa divergência.
   É verdade, mas é um detalhe do teste e não serve ao TI. Tirei.
 

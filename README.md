@@ -17,15 +17,24 @@ empreendimento**, a partir do CSV de parcelas exportado do sistema.
 
 Na pasta do projeto:
 
-```powershell
+**Windows (PowerShell):**
+
+```bash
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1 (Para Windows)
-source .venv/bin/activate (Para Linux)
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-Se o PowerShell bloquear a ativação, rode antes
-`Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`.
+> Se o PowerShell bloquear a ativação, rode antes
+> `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`.
+
+**Linux ou macOS:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
 ## Onde fica o CSV
 
